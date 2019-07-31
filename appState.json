@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "test/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "code": "exports.handler = function(event, context, callback) {\n    //\n    callback(null, {\"message\": \"Successfully executed\"});\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -65,14 +65,19 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1564559592071
+    "lastSave": 1564559634382
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
       "name": "test",
       "url": "https://github.com/Kumudikatest/test",
-      "branches": []
+      "branches": [
+        {
+          "name": "master",
+          "hash": "59544e5d9d072ff56893b421997ab012d77b9cf4"
+        }
+      ]
     }
   }
 }
