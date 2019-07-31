@@ -76,7 +76,16 @@
       "dialect": null,
       "definitions": {}
     },
-    "envVariables": [],
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "AWS_REGION",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
     "packageJSON": {
       "dependencies": {}
     }
@@ -87,15 +96,22 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east1",
     "platform": "GCP",
-    "platformRegions": {},
-    "lastSave": 1564555914225
+    "platformRegions": {
+      "AWS": "us-east-1"
+    },
+    "lastSave": 1564558916578
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
       "name": "test",
       "url": "https://github.com/Kumudikatest/test",
-      "branches": []
+      "branches": [
+        {
+          "name": "master",
+          "hash": "754e2ff791f7eb78f5b63b6db682ae8b97e8bbf3"
+        }
+      ]
     }
   }
 }
