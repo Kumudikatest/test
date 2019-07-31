@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "test/function.js",
-        "code": "let AWS = require('aws-sdk');\nconst cognito_idp = new AWS.CognitoIdentityServiceProvider();\n\nexports.handler = function (request, response) {\n    cognito_idp.listUsers({\n        UserPoolId: \"us-east-1_D10y3fy0o\",\n        Limit: 10\n    }, function (error, data) {\n        if (error) {\n            // implement error handling logic here\n            throw error;\n        }\n        // your logic goes within this block\n    });\n    //\n \n\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst cognito_idp = new AWS.CognitoIdentityServiceProvider();\n\nexports.handler = function (request, response) {\n    cognito_idp.listUsers({\n        UserPoolId: \"us-east-1_D10y3fy0o\",\n        Limit: 10\n    }, function (error, data) {\n        if (error) {\n            // implement error handling logic here\n            throw error;\n        }\n        // your logic goes within this block\n    });\n    \n    response.send({ \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
@@ -398,7 +398,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1564577364303
+    "lastSave": 1564578385785
   },
   "VCS_STATE": {
     "provider": "GitHub",
@@ -408,7 +408,7 @@
       "branches": [
         {
           "name": "master",
-          "hash": "17a5084a2241581c45b5b272ee95716618888fb5"
+          "hash": "22d06f4ce3ec10028cef1beec675ac4dd15722b4"
         }
       ]
     }
