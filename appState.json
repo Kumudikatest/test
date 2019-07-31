@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "test/function.js",
-        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
+        "code": "exports.handler = function(request, response) {\n    //\n    response.send({\"message\": \"Successfully executed\"});\n}",
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
@@ -88,14 +88,19 @@
     "projectRegion": "us-east1",
     "platform": "GCP",
     "platformRegions": {},
-    "lastSave": 1564575932843
+    "lastSave": 1564576645419
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
       "name": "test",
       "url": "https://github.com/Kumudikatest/test",
-      "branches": []
+      "branches": [
+        {
+          "name": "master",
+          "hash": "8195a97aa19f6b9d3281b29c2e3d022dd9327edb"
+        }
+      ]
     }
   }
 }
