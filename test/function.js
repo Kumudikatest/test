@@ -2,6 +2,7 @@ let AWS = require('aws-sdk');
 const cognito_idp = new AWS.CognitoIdentityServiceProvider();
 
 exports.handler = function (request, response) {
+
     cognito_idp.listUsers({
         UserPoolId: "us-east-1_D10y3fy0o",
         Limit: 10
@@ -12,6 +13,6 @@ exports.handler = function (request, response) {
         }
         // your logic goes within this block
     });
-    
+
     response.send({ "message": "Successfully executed" });
 }
