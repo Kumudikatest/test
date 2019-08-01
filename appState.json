@@ -1,28 +1,29 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "66fb73ce-c1ea-475b-b9f9-28cbdf05c244": {
-        "id": "66fb73ce-c1ea-475b-b9f9-28cbdf05c244",
+      "c2de8116-5bf8-43da-9340-24151873efec": {
+        "id": "c2de8116-5bf8-43da-9340-24151873efec",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "b80b7fe6-5974-471b-8599-6deb79d3661e"
+          "f0249796-01dc-4c46-aa86-e80671628c69",
+          "35859c89-f42c-432a-b1df-1bc3d8518af1"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "b80b7fe6-5974-471b-8599-6deb79d3661e": {
-        "id": "b80b7fe6-5974-471b-8599-6deb79d3661e",
-        "parent": "66fb73ce-c1ea-475b-b9f9-28cbdf05c244",
+      "f0249796-01dc-4c46-aa86-e80671628c69": {
+        "id": "f0249796-01dc-4c46-aa86-e80671628c69",
+        "parent": "c2de8116-5bf8-43da-9340-24151873efec",
         "name": "function.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
         "filePath": "test/function.js",
-        "code": "let AWS = require('aws-sdk');\nconst kinesis = new AWS.Kinesis();\n\nexports.handler = function (request, response) {\n    kinesis.describeStream({\n        StreamName: 'testindunil'\n    }).promise()\n        .then(data => {\n            // your logic goes here\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
+        "code": "let SL_REDIS = require('slappforge-sdk-redis');\nlet clusterManager = require('./ClusterManager');\nconst redis = new SL_REDIS.Redis(clusterManager);\n\nexports.handler = function (request, response) {\n    // You must always quit the redis client after it's used\n    redis.sinterstore({\n        clusterIdentifier: 'k1234567890123456789',\n        params: [{\n            key: '2',\n            values: ['2']\n        }]\n    }, function (error, response, redisClient) {\n        if (error) {\n            callback(error);\n        } else {\n            redisClient.quit();\n        }\n    });\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
@@ -36,8 +37,8 @@
           }
         ]
       },
-      "f1a8ce68-f494-495d-ba45-0731757429e3": {
-        "id": "f1a8ce68-f494-495d-ba45-0731757429e3",
+      "84c9b553-5510-49e6-b07e-79b415727feb": {
+        "id": "84c9b553-5510-49e6-b07e-79b415727feb",
         "parent": null,
         "name": "index.js",
         "type": "JS_FILE",
@@ -47,8 +48,8 @@
         "filePath": "index.js",
         "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.testfunction = require(\"./test/function.js\").handler;"
       },
-      "60c40d87-67a7-4111-8dbd-15698c80f19b": {
-        "id": "60c40d87-67a7-4111-8dbd-15698c80f19b",
+      "d94a55da-b6ea-46c1-951f-cd06fe7a8822": {
+        "id": "d94a55da-b6ea-46c1-951f-cd06fe7a8822",
         "parent": null,
         "name": "main.py",
         "type": "PYTHON_FILE",
@@ -57,29 +58,82 @@
         "isRemovable": false,
         "filePath": "main.py",
         "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
+      },
+      "35859c89-f42c-432a-b1df-1bc3d8518af1": {
+        "id": "35859c89-f42c-432a-b1df-1bc3d8518af1",
+        "parent": "c2de8116-5bf8-43da-9340-24151873efec",
+        "name": "ClusterManager.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test/ClusterManager.js",
+        "code": "module.exports = function() {\n    this.clusters = [];\n\n    this.clusters[\"k1234567890123456789\"] = {\n        host: \"k1234567890123456789.y6jiqb.clustercfg.use1.cache.amazonaws.com\",\n        port: 6379,\n        clusterModeEnabled: true\n    };\n};"
       }
     },
     "deletedFiles": [],
-    "rootNode": "66fb73ce-c1ea-475b-b9f9-28cbdf05c244",
+    "rootNode": "c2de8116-5bf8-43da-9340-24151873efec",
     "openFiles": [
-      "b80b7fe6-5974-471b-8599-6deb79d3661e"
+      "f0249796-01dc-4c46-aa86-e80671628c69"
     ],
-    "currentFileId": "b80b7fe6-5974-471b-8599-6deb79d3661e",
+    "currentFileId": "f0249796-01dc-4c46-aa86-e80671628c69",
     "resources": {
       "http-trigger": {
         "name": "http-trigger",
         "type": "http-trigger",
         "config": {}
       },
-      "kinesistestindunil": {
-        "name": "kinesistestindunil",
-        "type": "Kinesis",
+      "redis-k1234567890123456789": {
+        "name": "redis-k1234567890123456789",
+        "type": "Redis",
         "config": {
+          "clusterConfig": {
+            "engineType": "redis",
+            "clusterSpec": {
+              "instanceFamily": "t2",
+              "engineVersion": "5.0.0",
+              "nodeTypeClass": "cache.t2.small",
+              "clusterModeEnabled": true,
+              "autoFailoverEnabled": "enabled",
+              "numOfShards": 3,
+              "numOfReplicas": 4
+            },
+            "clusterSetting": {
+              "clusterName": "k1234567890123456789",
+              "clusterDescription": "k1234567890qwertyuioplkjhgfdsazxcvbnm qwertyuiopasdfghjklzxcvbnm\nqwertyuio weflkwerfgkprgjkeblgj",
+              "port": 6379
+            },
+            "host": "k1234567890123456789.y6jiqb.clustercfg.use1.cache.amazonaws.com",
+            "doesExist": true,
+            "alreadyDeployed": true,
+            "external": true,
+            "redisClient": ""
+          },
+          "clusterResources": [],
+          "editMode": false,
+          "enableInject": true,
+          "isGlobalEditMode": false,
+          "isClusterSelectionValid": true,
+          "isNewFromGlobal": false,
           "mode": 1,
-          "StreamName": "testindunil",
-          "shards": 1,
-          "region": "us-east-1",
-          "operation": "describe-stream"
+          "operation": {
+            "str": "REDIS_SINTERSTORE",
+            "operation": "sinterstore",
+            "displayName": "SINTERSTORE",
+            "type": {
+              "str": "REDIS_SETS",
+              "type": "sets",
+              "displayName": "SETS"
+            }
+          },
+          "params": [],
+          "projectRegion": "us-east-1",
+          "reusableMode": false,
+          "showOperations": true,
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          }
         }
       }
     },
@@ -95,38 +149,14 @@
         "shouldPersist": false,
         "displayOnly": false,
         "editable": false
-      },
-      {
-        "lambdaId": "all",
-        "varKey": "AWS_ACCESS_KEY_ID",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      },
-      {
-        "lambdaId": "all",
-        "varKey": "AWS_SECRET_ACCESS_KEY",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      },
-      {
-        "lambdaId": "all",
-        "varKey": "SIGMA_AWS_ACC_ID",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
       }
     ],
     "packageJSON": {
       "dependencies": {
-        "aws-sdk": {
-          "name": "aws-sdk",
+        "slappforge-sdk-redis": {
+          "name": "slappforge-sdk-redis",
           "language": "javascript",
-          "version": "2.176.0",
+          "version": "0.0.3",
           "dev": false,
           "notRemovable": false
         }
@@ -142,7 +172,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1564637300026
+    "lastSave": 1564637591927
   },
   "VCS_STATE": {
     "provider": "GitHub",
