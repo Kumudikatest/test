@@ -1,16 +1,15 @@
 let AWS = require('aws-sdk');
-const ddb = new AWS.DynamoDB.DocumentClient();
+const kinesis = new AWS.Kinesis();
 
 exports.handler = function (request, response) {
-    ddb.get({
-        TableName: 'BTMenu',
-        Key: { 'itemCode': 'i' }
+    kinesis.describeStream({
+        StreamName: 'testindunil'
     }).promise()
-        .then((data) => {
-            //your logic goes here
+        .then(data => {
+            // your logic goes here
         })
-        .catch((err) => {
-            //handle error
+        .catch(err => {
+            // error handling goes here
         });
 
     response.send({ "message": "Successfully executed" });

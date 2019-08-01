@@ -1,28 +1,28 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "989c3ca0-7747-41c6-b24e-f59cc1c5a5bb": {
-        "id": "989c3ca0-7747-41c6-b24e-f59cc1c5a5bb",
+      "66fb73ce-c1ea-475b-b9f9-28cbdf05c244": {
+        "id": "66fb73ce-c1ea-475b-b9f9-28cbdf05c244",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "cb995532-1d09-4aaa-ae1a-9e4e39e178ae"
+          "b80b7fe6-5974-471b-8599-6deb79d3661e"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "cb995532-1d09-4aaa-ae1a-9e4e39e178ae": {
-        "id": "cb995532-1d09-4aaa-ae1a-9e4e39e178ae",
-        "parent": "989c3ca0-7747-41c6-b24e-f59cc1c5a5bb",
+      "b80b7fe6-5974-471b-8599-6deb79d3661e": {
+        "id": "b80b7fe6-5974-471b-8599-6deb79d3661e",
+        "parent": "66fb73ce-c1ea-475b-b9f9-28cbdf05c244",
         "name": "function.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
         "filePath": "test/function.js",
-        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (request, response) {\n    ddb.get({\n        TableName: 'BTMenu',\n        Key: { 'itemCode': 'i' }\n    }).promise()\n        .then((data) => {\n            //your logic goes here\n        })\n        .catch((err) => {\n            //handle error\n        });\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst kinesis = new AWS.Kinesis();\n\nexports.handler = function (request, response) {\n    kinesis.describeStream({\n        StreamName: 'testindunil'\n    }).promise()\n        .then(data => {\n            // your logic goes here\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
@@ -36,8 +36,8 @@
           }
         ]
       },
-      "7616f86a-05d5-4e88-9a30-0b605a4404dc": {
-        "id": "7616f86a-05d5-4e88-9a30-0b605a4404dc",
+      "f1a8ce68-f494-495d-ba45-0731757429e3": {
+        "id": "f1a8ce68-f494-495d-ba45-0731757429e3",
         "parent": null,
         "name": "index.js",
         "type": "JS_FILE",
@@ -47,8 +47,8 @@
         "filePath": "index.js",
         "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.testfunction = require(\"./test/function.js\").handler;"
       },
-      "3402364e-b44c-4f3d-b056-6a2253348d42": {
-        "id": "3402364e-b44c-4f3d-b056-6a2253348d42",
+      "60c40d87-67a7-4111-8dbd-15698c80f19b": {
+        "id": "60c40d87-67a7-4111-8dbd-15698c80f19b",
         "parent": null,
         "name": "main.py",
         "type": "PYTHON_FILE",
@@ -60,48 +60,26 @@
       }
     },
     "deletedFiles": [],
-    "rootNode": "989c3ca0-7747-41c6-b24e-f59cc1c5a5bb",
+    "rootNode": "66fb73ce-c1ea-475b-b9f9-28cbdf05c244",
     "openFiles": [
-      "cb995532-1d09-4aaa-ae1a-9e4e39e178ae"
+      "b80b7fe6-5974-471b-8599-6deb79d3661e"
     ],
-    "currentFileId": "cb995532-1d09-4aaa-ae1a-9e4e39e178ae",
+    "currentFileId": "b80b7fe6-5974-471b-8599-6deb79d3661e",
     "resources": {
       "http-trigger": {
         "name": "http-trigger",
         "type": "http-trigger",
         "config": {}
       },
-      "ddbBTMenu": {
-        "name": "ddbBTMenu",
-        "type": "DynamoDB",
+      "kinesistestindunil": {
+        "name": "kinesistestindunil",
+        "type": "Kinesis",
         "config": {
           "mode": 1,
-          "operation": "get",
-          "table": {
-            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/BTMenu",
-            "name": "BTMenu",
-            "partitionKey": "itemCode",
-            "partitionKeyType": "S",
-            "hasSortKey": false,
-            "sortKey": "",
-            "sortKeyType": "S",
-            "payPerRequest": true,
-            "mode": 1
-          },
-          "isGlobalEditMode": false,
-          "parameters": {
-            "Key": {
-              "itemCode": "i"
-            },
-            "Item": {},
-            "ExpressionAttributeValues": {}
-          },
-          "triggerParams": {},
-          "validator": {
-            "validatableFields": {},
-            "validity": true
-          },
-          "valid": true
+          "StreamName": "testindunil",
+          "shards": 1,
+          "region": "us-east-1",
+          "operation": "describe-stream"
         }
       }
     },
@@ -164,7 +142,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1564635250843
+    "lastSave": 1564637300026
   },
   "VCS_STATE": {
     "provider": "GitHub",
