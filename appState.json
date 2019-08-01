@@ -1,28 +1,28 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "90c4e21d-e281-4aea-bbec-e0abbbffaa7d": {
-        "id": "90c4e21d-e281-4aea-bbec-e0abbbffaa7d",
+      "f2ad1847-a060-40a6-b3d2-32f4f4c6169d": {
+        "id": "f2ad1847-a060-40a6-b3d2-32f4f4c6169d",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "47a6dbc4-5f98-428d-a057-ab20750ad00e"
+          "eb99b30a-55d3-4668-9715-c16b54832c9a"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "47a6dbc4-5f98-428d-a057-ab20750ad00e": {
-        "id": "47a6dbc4-5f98-428d-a057-ab20750ad00e",
-        "parent": "90c4e21d-e281-4aea-bbec-e0abbbffaa7d",
+      "eb99b30a-55d3-4668-9715-c16b54832c9a": {
+        "id": "eb99b30a-55d3-4668-9715-c16b54832c9a",
+        "parent": "f2ad1847-a060-40a6-b3d2-32f4f4c6169d",
         "name": "function.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
         "filePath": "test/function.js",
-        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\nexports.handler = function (request, response) {\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['kumudika@adroitlogic.com'],\n            CcAddresses: [],\n            BccAddresses: []\n        },\n        Message: {\n            Body: {\n                Text: {\n                    Data: ``\n                }\n            },\n            Subject: {\n                Data: 'Test'\n            }\n        },\n        Source: 'kumudika@adroitlogic.com',\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst s3 = new AWS.S3();\n\nexports.handler = function (request, response) {\n    s3.listObjects({\n        'Bucket': 'as2-test-lahiru',\n        'MaxKeys': 10,\n        'Prefix': ''\n    }).promise()\n        .then(data => {\n            console.log(data);           // successful response\n            /*\n            data = {\n                Contents: [\n                    {\n                       ETag: \"\\\"70ee1738b6b21e2c8a43f3a5ab0eee71\\\"\",\n                       Key: \"example1.jpg\",\n                       LastModified: \"<Date Representation>\",\n                       Owner: {\n                          DisplayName: \"myname\",\n                          ID: \"12345example25102679df27bb0ae12b3f85be6f290b936c4393484be31bebcc\"\n                       },\n                       Size: 11,\n                       StorageClass: \"STANDARD\"\n                    },\n                    // {...}\n                ]\n            }\n            */\n        })\n        .catch(err => {\n            console.log(err, err.stack); // an error occurred\n        });\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
@@ -36,8 +36,8 @@
           }
         ]
       },
-      "3e6ecdb9-f5fc-47f5-ada0-750e77ba23d2": {
-        "id": "3e6ecdb9-f5fc-47f5-ada0-750e77ba23d2",
+      "006bd67c-6232-45cb-a5a6-ccfdae447448": {
+        "id": "006bd67c-6232-45cb-a5a6-ccfdae447448",
         "parent": null,
         "name": "index.js",
         "type": "JS_FILE",
@@ -47,8 +47,8 @@
         "filePath": "index.js",
         "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.testfunction = require(\"./test/function.js\").handler;"
       },
-      "e5134dac-4ae5-4894-aeb6-5372ec584350": {
-        "id": "e5134dac-4ae5-4894-aeb6-5372ec584350",
+      "2a73d894-7d51-4b19-9c92-64b6530429cc": {
+        "id": "2a73d894-7d51-4b19-9c92-64b6530429cc",
         "parent": null,
         "name": "main.py",
         "type": "PYTHON_FILE",
@@ -60,32 +60,25 @@
       }
     },
     "deletedFiles": [],
-    "rootNode": "90c4e21d-e281-4aea-bbec-e0abbbffaa7d",
+    "rootNode": "f2ad1847-a060-40a6-b3d2-32f4f4c6169d",
     "openFiles": [
-      "47a6dbc4-5f98-428d-a057-ab20750ad00e"
+      "eb99b30a-55d3-4668-9715-c16b54832c9a"
     ],
-    "currentFileId": "47a6dbc4-5f98-428d-a057-ab20750ad00e",
+    "currentFileId": "eb99b30a-55d3-4668-9715-c16b54832c9a",
     "resources": {
       "http-trigger": {
         "name": "http-trigger",
         "type": "http-trigger",
         "config": {}
       },
-      "ses-kumudika@adroitlogic.com": {
-        "name": "ses-kumudika@adroitlogic.com",
-        "type": "SES",
+      "s3as2TestLahiru": {
+        "name": "s3as2TestLahiru",
+        "type": "S3",
         "config": {
-          "selectedIdentity": "kumudika@adroitlogic.com",
-          "projectRegion": "us-east-1",
-          "params": {
-            "to": "kumudika@adroitlogic.com",
-            "cc": "",
-            "bcc": "",
-            "subject": "Test",
-            "body": {
-              "text": "",
-              "html": ""
-            }
+          "mode": 1,
+          "bucket": {
+            "region": "us-east-1",
+            "name": "as2-test-lahiru"
           }
         }
       }
@@ -149,7 +142,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1564634171014
+    "lastSave": 1564634506835
   },
   "VCS_STATE": {
     "provider": "GitHub",
