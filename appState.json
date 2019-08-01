@@ -1,29 +1,29 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "c2de8116-5bf8-43da-9340-24151873efec": {
-        "id": "c2de8116-5bf8-43da-9340-24151873efec",
+      "463f1cea-956b-46d8-8e34-3dbabaf1d4c1": {
+        "id": "463f1cea-956b-46d8-8e34-3dbabaf1d4c1",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "f0249796-01dc-4c46-aa86-e80671628c69",
-          "35859c89-f42c-432a-b1df-1bc3d8518af1"
+          "9ee4a2be-19f5-47c5-9ba8-107e7745ce54",
+          "80563cb4-e3e6-479d-b357-4927f2f42294"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "f0249796-01dc-4c46-aa86-e80671628c69": {
-        "id": "f0249796-01dc-4c46-aa86-e80671628c69",
-        "parent": "c2de8116-5bf8-43da-9340-24151873efec",
+      "9ee4a2be-19f5-47c5-9ba8-107e7745ce54": {
+        "id": "9ee4a2be-19f5-47c5-9ba8-107e7745ce54",
+        "parent": "463f1cea-956b-46d8-8e34-3dbabaf1d4c1",
         "name": "function.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
         "filePath": "test/function.js",
-        "code": "let SL_REDIS = require('slappforge-sdk-redis');\nlet clusterManager = require('./ClusterManager');\nconst redis = new SL_REDIS.Redis(clusterManager);\n\nexports.handler = function (request, response) {\n    // You must always quit the redis client after it's used\n    redis.sinterstore({\n        clusterIdentifier: 'k1234567890123456789',\n        params: [{\n            key: '2',\n            values: ['2']\n        }]\n    }, function (error, response, redisClient) {\n        if (error) {\n            callback(error);\n        } else {\n            redisClient.quit();\n        }\n    });\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
+        "code": "let SL_AWS = require('slappforge-sdk-aws');\nlet connectionManager = require('./ConnectionManager');\nconst rds = new SL_AWS.RDS(connectionManager);\n\nexports.handler = function(request, response) {\n     \n        // You must always end/destroy the DB connection after it's used\n        rds.beginTransaction({\n            instanceIdentifier: 'k'\n        },function (error,connection) {\n            if (error) {\n                throw error;\n            }\n            connection.end();\n            \n        });\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
@@ -37,8 +37,8 @@
           }
         ]
       },
-      "84c9b553-5510-49e6-b07e-79b415727feb": {
-        "id": "84c9b553-5510-49e6-b07e-79b415727feb",
+      "701be08b-87d8-428a-8827-4a2ba947f97b": {
+        "id": "701be08b-87d8-428a-8827-4a2ba947f97b",
         "parent": null,
         "name": "index.js",
         "type": "JS_FILE",
@@ -48,8 +48,8 @@
         "filePath": "index.js",
         "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.testfunction = require(\"./test/function.js\").handler;"
       },
-      "d94a55da-b6ea-46c1-951f-cd06fe7a8822": {
-        "id": "d94a55da-b6ea-46c1-951f-cd06fe7a8822",
+      "4f44d916-2ec0-4f1a-9156-c372be346d72": {
+        "id": "4f44d916-2ec0-4f1a-9156-c372be346d72",
         "parent": null,
         "name": "main.py",
         "type": "PYTHON_FILE",
@@ -59,81 +59,68 @@
         "filePath": "main.py",
         "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
       },
-      "35859c89-f42c-432a-b1df-1bc3d8518af1": {
-        "id": "35859c89-f42c-432a-b1df-1bc3d8518af1",
-        "parent": "c2de8116-5bf8-43da-9340-24151873efec",
-        "name": "ClusterManager.js",
+      "80563cb4-e3e6-479d-b357-4927f2f42294": {
+        "id": "80563cb4-e3e6-479d-b357-4927f2f42294",
+        "parent": "463f1cea-956b-46d8-8e34-3dbabaf1d4c1",
+        "name": "ConnectionManager.js",
         "type": "JS_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/ClusterManager.js",
-        "code": "module.exports = function() {\n    this.clusters = [];\n\n    this.clusters[\"k1234567890123456789\"] = {\n        host: \"k1234567890123456789.y6jiqb.clustercfg.use1.cache.amazonaws.com\",\n        port: 6379,\n        clusterModeEnabled: true\n    };\n};"
+        "filePath": "test/ConnectionManager.js",
+        "code": "module.exports = function() {\n    this.dbConnections = [];\n\n    this.dbConnections[\"k\"] = {\n        host: \"k.czndmdv7dw6d.us-east-1.rds.amazonaws.com\",\n        port: \"1234\",\n        user: \"k\",\n        password: process.env.Password_rdsK,\n        database: \"k\"\n    };\n};"
       }
     },
     "deletedFiles": [],
-    "rootNode": "c2de8116-5bf8-43da-9340-24151873efec",
+    "rootNode": "463f1cea-956b-46d8-8e34-3dbabaf1d4c1",
     "openFiles": [
-      "f0249796-01dc-4c46-aa86-e80671628c69"
+      "9ee4a2be-19f5-47c5-9ba8-107e7745ce54"
     ],
-    "currentFileId": "f0249796-01dc-4c46-aa86-e80671628c69",
+    "currentFileId": "9ee4a2be-19f5-47c5-9ba8-107e7745ce54",
     "resources": {
       "http-trigger": {
         "name": "http-trigger",
         "type": "http-trigger",
         "config": {}
       },
-      "redis-k1234567890123456789": {
-        "name": "redis-k1234567890123456789",
-        "type": "Redis",
+      "rds-k": {
+        "name": "rds-k",
+        "type": "RDS",
         "config": {
-          "clusterConfig": {
-            "engineType": "redis",
-            "clusterSpec": {
-              "instanceFamily": "t2",
-              "engineVersion": "5.0.0",
-              "nodeTypeClass": "cache.t2.small",
-              "clusterModeEnabled": true,
-              "autoFailoverEnabled": "enabled",
-              "numOfShards": 3,
-              "numOfReplicas": 4
-            },
-            "clusterSetting": {
-              "clusterName": "k1234567890123456789",
-              "clusterDescription": "k1234567890qwertyuioplkjhgfdsazxcvbnm qwertyuiopasdfghjklzxcvbnm\nqwertyuio weflkwerfgkprgjkeblgj",
-              "port": 6379
-            },
-            "host": "k1234567890123456789.y6jiqb.clustercfg.use1.cache.amazonaws.com",
-            "doesExist": true,
-            "alreadyDeployed": true,
-            "external": true,
-            "redisClient": ""
-          },
-          "clusterResources": [],
           "editMode": false,
-          "enableInject": true,
-          "isGlobalEditMode": false,
-          "isClusterSelectionValid": true,
-          "isNewFromGlobal": false,
-          "mode": 1,
-          "operation": {
-            "str": "REDIS_SINTERSTORE",
-            "operation": "sinterstore",
-            "displayName": "SINTERSTORE",
-            "type": {
-              "str": "REDIS_SETS",
-              "type": "sets",
-              "displayName": "SETS"
-            }
+          "operation": 1,
+          "rdsInstance": {
+            "rdsEngineType": "mysql",
+            "rdsEdition": "mysql",
+            "rdsInstanceSpec": {
+              "dbInstanceClass": "db.t2.micro",
+              "dbLicenseModel": "general-public-license",
+              "dbEngineVersion": "5.7.19"
+            },
+            "rdsSetting": {
+              "instanceIdentifier": "k",
+              "masterUsername": "k",
+              "masterPassword": "Test#123"
+            },
+            "rdsDBOptions": {
+              "dbName": "k",
+              "dbPort": 1234
+            },
+            "rdsInstanceArn": "arn:aws:rds:us-east-1:318300609668:db:k",
+            "Host": "k.czndmdv7dw6d.us-east-1.rds.amazonaws.com",
+            "doesExist": true
           },
-          "params": [],
+          "rdsInstanceResources": [],
           "projectRegion": "us-east-1",
-          "reusableMode": false,
-          "showOperations": true,
-          "validator": {
-            "validatableFields": {},
-            "validity": true
-          }
+          "mode": 1,
+          "additionalFiles": [],
+          "params": {
+            "query": "",
+            "inserts": ""
+          },
+          "isGlobalEditMode": false,
+          "enableInject": true,
+          "isNewFromGlobal": false
         }
       }
     },
@@ -153,10 +140,10 @@
     ],
     "packageJSON": {
       "dependencies": {
-        "slappforge-sdk-redis": {
-          "name": "slappforge-sdk-redis",
+        "slappforge-sdk-aws": {
+          "name": "slappforge-sdk-aws",
           "language": "javascript",
-          "version": "0.0.3",
+          "version": "0.0.5",
           "dev": false,
           "notRemovable": false
         }
@@ -172,7 +159,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1564637591927
+    "lastSave": 1564639379734
   },
   "VCS_STATE": {
     "provider": "GitHub",
