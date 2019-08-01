@@ -1,28 +1,28 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "56141774-9167-4eef-8ac4-4e8eb0f1581e": {
-        "id": "56141774-9167-4eef-8ac4-4e8eb0f1581e",
+      "96ced094-914e-4e24-8c11-1c9508d44713": {
+        "id": "96ced094-914e-4e24-8c11-1c9508d44713",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "1d2635c0-ebed-47f8-9bfd-bc352955a48e"
+          "939ac9c5-27f2-4bce-9296-8d0c64b5cc9b"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "1d2635c0-ebed-47f8-9bfd-bc352955a48e": {
-        "id": "1d2635c0-ebed-47f8-9bfd-bc352955a48e",
-        "parent": "56141774-9167-4eef-8ac4-4e8eb0f1581e",
+      "939ac9c5-27f2-4bce-9296-8d0c64b5cc9b": {
+        "id": "939ac9c5-27f2-4bce-9296-8d0c64b5cc9b",
+        "parent": "96ced094-914e-4e24-8c11-1c9508d44713",
         "name": "function.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
         "filePath": "test/function.js",
-        "code": "let AWS = require('aws-sdk');\nlet SL_AWS = require('slappforge-sdk-aws');\nconst sqs = new SL_AWS.SQS(AWS);\n\nexports.handler = function (request, response) {\n    sqs.receiveMessage({\n        QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/KTestSQS`,\n        AttributeNames: ['All'],\n        MaxNumberOfMessages: '1',\n        VisibilityTimeout: '30',\n        WaitTimeSeconds: '0'\n    }).promise()\n        .then(receivedMsgData => {\n            if (!!(receivedMsgData) && !!(receivedMsgData.Messages)) {\n                let receivedMessages = receivedMsgData.Messages;\n                receivedMessages.forEach(message => {\n                    // your logic to access each message through out the loop. Each message is available under variable message \n                    // within this block\n                });\n            } else {\n                // No messages to process\n            }\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst sns = new AWS.SNS();\n\nexports.handler = function (request, response) {\n    sns.getTopicAttributes({\n        TopicArn: 'arn:aws:sns:us-east-1:318300609668:TestSNS'\n    }).promise()\n        .then(data => {\n            // your code goes here\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n\n    response.send({ \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
@@ -36,8 +36,8 @@
           }
         ]
       },
-      "9d1e0ad6-0330-4475-9721-8ae243698483": {
-        "id": "9d1e0ad6-0330-4475-9721-8ae243698483",
+      "436283ad-bea5-47cb-a2ed-e443bbcf84c8": {
+        "id": "436283ad-bea5-47cb-a2ed-e443bbcf84c8",
         "parent": null,
         "name": "index.js",
         "type": "JS_FILE",
@@ -47,8 +47,8 @@
         "filePath": "index.js",
         "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.testfunction = require(\"./test/function.js\").handler;"
       },
-      "f922e860-fa10-482b-82ad-282c7f437a3c": {
-        "id": "f922e860-fa10-482b-82ad-282c7f437a3c",
+      "d644cae5-fdf6-43b9-a58b-2a301b960a87": {
+        "id": "d644cae5-fdf6-43b9-a58b-2a301b960a87",
         "parent": null,
         "name": "main.py",
         "type": "PYTHON_FILE",
@@ -60,36 +60,27 @@
       }
     },
     "deletedFiles": [],
-    "rootNode": "56141774-9167-4eef-8ac4-4e8eb0f1581e",
+    "rootNode": "96ced094-914e-4e24-8c11-1c9508d44713",
     "openFiles": [
-      "1d2635c0-ebed-47f8-9bfd-bc352955a48e"
+      "939ac9c5-27f2-4bce-9296-8d0c64b5cc9b"
     ],
-    "currentFileId": "1d2635c0-ebed-47f8-9bfd-bc352955a48e",
+    "currentFileId": "939ac9c5-27f2-4bce-9296-8d0c64b5cc9b",
     "resources": {
       "http-trigger": {
         "name": "http-trigger",
         "type": "http-trigger",
         "config": {}
       },
-      "sqsKTestSQS": {
-        "name": "sqsKTestSQS",
-        "type": "SQS",
+      "snsusEast1TestSNS": {
+        "name": "snsusEast1TestSNS",
+        "type": "SNS",
         "config": {
-          "mode": 1,
-          "existing": true,
-          "name": "KTestSQS",
-          "url": "https://sqs.us-east-1.amazonaws.com/318300609668/KTestSQS",
-          "selectedRegion": "us-east-1",
-          "deliveryDelay": "0",
-          "deliveryDelayUnit": "seconds",
-          "queueType": "standardQueue",
-          "defaultVisibilityTimeout": "30",
-          "defaultVisibilityTimeoutUnit": "seconds",
-          "messageRetentionPeriod": "345600",
-          "messageRetentionPeriodUnit": "seconds",
-          "maximumMessageSize": 256,
-          "receiveMessageWaitTime": "0",
-          "queueARN": "arn:aws:sqs:us-east-1:318300609668:KTestSQS"
+          "topicMode": 1,
+          "topicName": "TestSNS",
+          "topicArn": "arn:aws:sns:us-east-1:318300609668:TestSNS",
+          "topicRegion": "us-east-1",
+          "snsType": 0,
+          "subscriptions": []
         }
       }
     },
@@ -139,13 +130,6 @@
           "version": "2.176.0",
           "dev": false,
           "notRemovable": false
-        },
-        "slappforge-sdk-aws": {
-          "name": "slappforge-sdk-aws",
-          "language": "javascript",
-          "version": "0.0.5",
-          "dev": false,
-          "notRemovable": false
         }
       }
     }
@@ -159,7 +143,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1564633614627
+    "lastSave": 1564633958425
   },
   "VCS_STATE": {
     "provider": "GitHub",
