@@ -8,7 +8,9 @@
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "a593f45e-bcf0-4ec0-9cfc-9ec4b7661f8b"
+          "a593f45e-bcf0-4ec0-9cfc-9ec4b7661f8b",
+          "e14aad3e-d11c-4aaf-ba79-ea20f939afec",
+          "b31593f0-81fc-4b8c-af7a-068b668e96c0"
         ],
         "isRemovable": false,
         "filePath": "test"
@@ -43,22 +45,19 @@
         "name": "sub3",
         "type": "DIRECTORY",
         "isDirectory": true,
-        "children": [
-          "928455ae-9e5f-4764-8105-e21d90038428",
-          "8b78bb74-788a-43ae-9dd2-4f4aef92c675"
-        ],
+        "children": [],
         "isRemovable": true,
         "filePath": "test/sub1/sub2/sub3"
       },
-      "928455ae-9e5f-4764-8105-e21d90038428": {
-        "id": "928455ae-9e5f-4764-8105-e21d90038428",
-        "parent": "cbcfb93a-6da0-462c-8735-7ae7fe185c8e",
+      "e14aad3e-d11c-4aaf-ba79-ea20f939afec": {
+        "id": "e14aad3e-d11c-4aaf-ba79-ea20f939afec",
+        "parent": "ea62d5ac-0144-49f5-b6c9-495dfed1aa59",
         "name": "sub3.py",
         "type": "PYTHON_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/sub1/sub2/sub3/sub3.py",
+        "filePath": "test/sub3.py",
         "code": "def handler(event, context):\n    \n    return {\"message\": \"Successfully executed\"}\n",
         "config": {
           "runtime": "python2.7",
@@ -69,28 +68,28 @@
         },
         "triggers": []
       },
-      "8b78bb74-788a-43ae-9dd2-4f4aef92c675": {
-        "id": "8b78bb74-788a-43ae-9dd2-4f4aef92c675",
-        "parent": "cbcfb93a-6da0-462c-8735-7ae7fe185c8e",
+      "b31593f0-81fc-4b8c-af7a-068b668e96c0": {
+        "id": "b31593f0-81fc-4b8c-af7a-068b668e96c0",
+        "parent": "ea62d5ac-0144-49f5-b6c9-495dfed1aa59",
         "name": "__init__.py",
         "type": "PYTHON_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/sub1/sub2/sub3/__init__.py",
+        "filePath": "test/__init__.py",
         "code": ""
       }
     },
     "deletedFiles": [
-      "test/lambda.js",
-      "test/sub1/sub1.js",
-      "test/sub1/sub2/sub2.js"
+      "test/sub1/sub2/sub3/sub3.py",
+      "test/sub1/sub2/sub3/__init__.py",
+      "test/sub.py"
     ],
     "rootNode": "ea62d5ac-0144-49f5-b6c9-495dfed1aa59",
     "openFiles": [
-      "928455ae-9e5f-4764-8105-e21d90038428"
+      "e14aad3e-d11c-4aaf-ba79-ea20f939afec"
     ],
-    "currentFileId": "928455ae-9e5f-4764-8105-e21d90038428",
+    "currentFileId": "e14aad3e-d11c-4aaf-ba79-ea20f939afec",
     "resources": {},
     "customTemplate": {
       "dialect": null,
@@ -112,6 +111,14 @@
         "shouldPersist": true,
         "displayOnly": false,
         "editable": true
+      },
+      {
+        "lambdaId": "e14aad3e-d11c-4aaf-ba79-ea20f939afec",
+        "varKey": "PYTHONPATH",
+        "varValue": "/var/runtime:/var/task/test",
+        "shouldPersist": true,
+        "displayOnly": false,
+        "editable": true
       }
     ],
     "packageJSON": {
@@ -125,14 +132,19 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1564744598592
+    "lastSave": 1564744938837
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
       "name": "test",
       "url": "https://github.com/Kumudikatest/test",
-      "branches": []
+      "branches": [
+        {
+          "name": "master",
+          "hash": "f625796bdd11390629f7fc670a162ff337979249"
+        }
+      ]
     }
   }
 }
