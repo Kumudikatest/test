@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "test/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst cognito_idp = new AWS.CognitoIdentityServiceProvider();\n\nexports.handler = function (event, context, callback) {\n    cognito_idp.listUsers({\n        UserPoolId: process.env.UserPoolId_cognitoUnnamed,\n        Limit: 10\n    }, function (error, data) {\n        if (error) {\n            // implement error handling logic here\n            console.log(error);\n            throw error;\n        } else { \n           console.log(data);\n       }\n        // your logic goes within this block\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst cognito_idp = new AWS.CognitoIdentityServiceProvider();\n\nexports.handler = function (event, context, callback) {\n    cognito_idp.listUsers({\n        UserPoolId: process.env.UserPoolId_cognitoUnnamed,\n        Limit: 10\n    }, function (error, data) {\n        if (error) {\n            // implement error handling logic here\n            console.log(error);\n            throw error;\n        } else {\n            console.log(data);\n        }\n        // your logic goes within this block\n    });\n    cognito_idp.adminCreateUser({\n        UserPoolId: process.env.UserPoolId_cognitoUnnamed,\n        Username: \"Test\",\n        DesiredDeliveryMediums: [\"SMS\"],\n        ForceAliasCreation: false,\n        TemporaryPassword: \"Test#123\",\n        UserAttributes: [],\n        ValidationData: []\n    }, function (error, data) {\n        if (error) {\n            // implement error handling logic here\n            throw error;\n        } else {\n            console.log(data);\n        }\n        // your logic goes within this block\n    });\n\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -30,7 +30,16 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": []
+        "triggers": [],
+        "testCases": {
+          "52960a24-cd0b-458a-a107-f177ffd3412b": {
+            "id": "52960a24-cd0b-458a-a107-f177ffd3412b",
+            "name": "Test event",
+            "functionId": "6b2ff712-2234-4565-9c27-4204b99d5a2f",
+            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "eventTemplate": "hello-world"
+          }
+        }
       }
     },
     "deletedFiles": [],
@@ -45,7 +54,8 @@
         "type": "CognitoIdentityServiceProvider",
         "config": {
           "mode": 0,
-          "name": "",
+          "name": " ",
+          "arn": "arn:aws:cognito-idp:us-east-1:318300609668:userpool/undefined",
           "userPool": {
             "Name": " ",
             "isNew": true,
@@ -231,14 +241,19 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1564738081914
+    "lastSave": 1564739081772
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
       "name": "test",
       "url": "https://github.com/Kumudikatest/test",
-      "branches": []
+      "branches": [
+        {
+          "name": "master",
+          "hash": "9ca54e0b551c091e67e17efdbf8302d2e6a4f889"
+        }
+      ]
     }
   }
 }
