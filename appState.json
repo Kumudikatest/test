@@ -1,126 +1,82 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "ea62d5ac-0144-49f5-b6c9-495dfed1aa59": {
-        "id": "ea62d5ac-0144-49f5-b6c9-495dfed1aa59",
+      "6e4c97ba-d559-4948-a449-33c667c51fec": {
+        "id": "6e4c97ba-d559-4948-a449-33c667c51fec",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "a593f45e-bcf0-4ec0-9cfc-9ec4b7661f8b",
-          "e14aad3e-d11c-4aaf-ba79-ea20f939afec",
-          "b31593f0-81fc-4b8c-af7a-068b668e96c0"
+          "b826b113-230d-462a-95de-090b39cefcde"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "a593f45e-bcf0-4ec0-9cfc-9ec4b7661f8b": {
-        "id": "a593f45e-bcf0-4ec0-9cfc-9ec4b7661f8b",
-        "parent": "ea62d5ac-0144-49f5-b6c9-495dfed1aa59",
-        "name": "sub1",
-        "type": "DIRECTORY",
-        "isDirectory": true,
-        "children": [
-          "4cd5db2c-1b6e-4390-9bd8-ef8aa57c4f16"
-        ],
-        "isRemovable": true,
-        "filePath": "test/sub1"
-      },
-      "4cd5db2c-1b6e-4390-9bd8-ef8aa57c4f16": {
-        "id": "4cd5db2c-1b6e-4390-9bd8-ef8aa57c4f16",
-        "parent": "a593f45e-bcf0-4ec0-9cfc-9ec4b7661f8b",
-        "name": "sub2",
-        "type": "DIRECTORY",
-        "isDirectory": true,
-        "children": [
-          "cbcfb93a-6da0-462c-8735-7ae7fe185c8e"
-        ],
-        "isRemovable": true,
-        "filePath": "test/sub1/sub2"
-      },
-      "cbcfb93a-6da0-462c-8735-7ae7fe185c8e": {
-        "id": "cbcfb93a-6da0-462c-8735-7ae7fe185c8e",
-        "parent": "4cd5db2c-1b6e-4390-9bd8-ef8aa57c4f16",
-        "name": "sub3",
-        "type": "DIRECTORY",
-        "isDirectory": true,
-        "children": [],
-        "isRemovable": true,
-        "filePath": "test/sub1/sub2/sub3"
-      },
-      "e14aad3e-d11c-4aaf-ba79-ea20f939afec": {
-        "id": "e14aad3e-d11c-4aaf-ba79-ea20f939afec",
-        "parent": "ea62d5ac-0144-49f5-b6c9-495dfed1aa59",
-        "name": "sub3.py",
-        "type": "PYTHON_LAMBDA",
+      "b826b113-230d-462a-95de-090b39cefcde": {
+        "id": "b826b113-230d-462a-95de-090b39cefcde",
+        "parent": "6e4c97ba-d559-4948-a449-33c667c51fec",
+        "name": "function.js",
+        "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/sub3.py",
-        "code": "def handler(event, context):\n    \n    return {\"message\": \"Successfully executed\"}\n",
+        "filePath": "test/function.js",
+        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
         "config": {
-          "runtime": "python2.7",
-          "handler": "handler",
+          "runtime": "nodejs8",
           "timeout": 60,
           "memory": 128,
-          "layers": []
+          "triggerType": 0
         },
-        "triggers": []
+        "triggers": [
+          {
+            "resourceName": "http-trigger",
+            "config": {}
+          }
+        ]
       },
-      "b31593f0-81fc-4b8c-af7a-068b668e96c0": {
-        "id": "b31593f0-81fc-4b8c-af7a-068b668e96c0",
-        "parent": "ea62d5ac-0144-49f5-b6c9-495dfed1aa59",
-        "name": "__init__.py",
+      "82b9c346-569b-4438-84c4-0e5c13c98b25": {
+        "id": "82b9c346-569b-4438-84c4-0e5c13c98b25",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js",
+        "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.testfunction = require(\"./test/function.js\").handler;"
+      },
+      "d8836bf5-2599-4bbf-99d9-f96bd05bf39f": {
+        "id": "d8836bf5-2599-4bbf-99d9-f96bd05bf39f",
+        "parent": null,
+        "name": "main.py",
         "type": "PYTHON_FILE",
         "isDirectory": false,
         "children": [],
-        "isRemovable": true,
-        "filePath": "test/__init__.py",
-        "code": ""
+        "isRemovable": false,
+        "filePath": "main.py",
+        "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
       }
     },
-    "deletedFiles": [
-      "test/sub1/sub2/sub3/sub3.py",
-      "test/sub1/sub2/sub3/__init__.py",
-      "test/sub.py"
-    ],
-    "rootNode": "ea62d5ac-0144-49f5-b6c9-495dfed1aa59",
+    "deletedFiles": [],
+    "rootNode": "6e4c97ba-d559-4948-a449-33c667c51fec",
     "openFiles": [
-      "e14aad3e-d11c-4aaf-ba79-ea20f939afec"
+      "b826b113-230d-462a-95de-090b39cefcde"
     ],
-    "currentFileId": "e14aad3e-d11c-4aaf-ba79-ea20f939afec",
-    "resources": {},
+    "currentFileId": "b826b113-230d-462a-95de-090b39cefcde",
+    "resources": {
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {}
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": {}
     },
-    "envVariables": [
-      {
-        "lambdaId": "all",
-        "varKey": "SIGMA_AWS_ACC_ID",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      },
-      {
-        "lambdaId": "928455ae-9e5f-4764-8105-e21d90038428",
-        "varKey": "PYTHONPATH",
-        "varValue": "/var/runtime:/var/task/test/sub1/sub2/sub3",
-        "shouldPersist": true,
-        "displayOnly": false,
-        "editable": true
-      },
-      {
-        "lambdaId": "e14aad3e-d11c-4aaf-ba79-ea20f939afec",
-        "varKey": "PYTHONPATH",
-        "varValue": "/var/runtime:/var/task/test",
-        "shouldPersist": true,
-        "displayOnly": false,
-        "editable": true
-      }
-    ],
+    "envVariables": [],
     "packageJSON": {
       "dependencies": {}
     }
@@ -129,22 +85,17 @@
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east-1",
-    "platform": "AWS",
+    "projectRegion": "us-east1",
+    "platform": "GCP",
     "platformRegions": {},
-    "lastSave": 1564744938837
+    "lastSave": 1564999980672
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
       "name": "test",
       "url": "https://github.com/Kumudikatest/test",
-      "branches": [
-        {
-          "name": "master",
-          "hash": "f625796bdd11390629f7fc670a162ff337979249"
-        }
-      ]
+      "branches": []
     }
   }
 }
