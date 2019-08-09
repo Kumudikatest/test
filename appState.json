@@ -1,59 +1,82 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "643a6bac-297c-4f3d-8562-dcbcd8acf35e": {
-        "id": "643a6bac-297c-4f3d-8562-dcbcd8acf35e",
+      "2abd40db-edce-4b0c-acf6-154d7142871c": {
+        "id": "2abd40db-edce-4b0c-acf6-154d7142871c",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "e7653197-1796-451e-9a20-0a102ecfa6e0"
+          "c84371a5-4325-43ff-bf8e-feaea1fb3aa7"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "e7653197-1796-451e-9a20-0a102ecfa6e0": {
-        "id": "e7653197-1796-451e-9a20-0a102ecfa6e0",
-        "parent": "643a6bac-297c-4f3d-8562-dcbcd8acf35e",
-        "name": "lambda.js",
+      "c84371a5-4325-43ff-bf8e-feaea1fb3aa7": {
+        "id": "c84371a5-4325-43ff-bf8e-feaea1fb3aa7",
+        "parent": "2abd40db-edce-4b0c-acf6-154d7142871c",
+        "name": "function.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "filePath": "test/function.js",
+        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
         "config": {
-          "runtime": "nodejs8.10",
-          "handler": "handler",
+          "runtime": "nodejs8",
           "timeout": 60,
           "memory": 128,
-          "layers": []
+          "triggerType": 0
         },
-        "triggers": []
+        "triggers": [
+          {
+            "resourceName": "http-trigger",
+            "config": {}
+          }
+        ]
+      },
+      "03362a22-c46c-4e7b-a60e-78648a6f97a1": {
+        "id": "03362a22-c46c-4e7b-a60e-78648a6f97a1",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js",
+        "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.testfunction = require(\"./test/function.js\").handler;"
+      },
+      "4f85e585-fe79-47dd-973b-a7c66d44cb41": {
+        "id": "4f85e585-fe79-47dd-973b-a7c66d44cb41",
+        "parent": null,
+        "name": "main.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "main.py",
+        "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
       }
     },
     "deletedFiles": [],
-    "rootNode": "643a6bac-297c-4f3d-8562-dcbcd8acf35e",
+    "rootNode": "2abd40db-edce-4b0c-acf6-154d7142871c",
     "openFiles": [
-      "e7653197-1796-451e-9a20-0a102ecfa6e0"
+      "c84371a5-4325-43ff-bf8e-feaea1fb3aa7"
     ],
-    "currentFileId": "e7653197-1796-451e-9a20-0a102ecfa6e0",
-    "resources": {},
+    "currentFileId": "c84371a5-4325-43ff-bf8e-feaea1fb3aa7",
+    "resources": {
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {}
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": {}
     },
-    "envVariables": [
-      {
-        "lambdaId": "all",
-        "varKey": "SIGMA_AWS_ACC_ID",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      }
-    ],
+    "envVariables": [],
     "packageJSON": {
       "dependencies": {}
     }
@@ -62,10 +85,10 @@
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east-1",
-    "platform": "AWS",
+    "projectRegion": "us-east1",
+    "platform": "GCP",
     "platformRegions": {},
-    "lastSave": 1565241041011
+    "lastSave": 1565329321424
   },
   "VCS_STATE": {
     "provider": "GitHub",
