@@ -23,7 +23,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "test/lambda.js",
-        "code": "let SL_REDIS = require('slappforge-sdk-redis');\nlet clusterManager = require('./ClusterManager');\nconst redis = new SL_REDIS.Redis(clusterManager);\n\nexports.handler = function (event, context, callback) {\n    // You must always quit the redis client after it's used\n    redis.set({\n        clusterIdentifier: 'k',\n        params: [{\n            key: 'FName',\n            value: 'kumu'\n        }, {\n            key: 'LName',\n            value: 'rupe'\n        }]\n    }, function (error, response, redisClient) {\n        if (error) {\n            callback(error);\n        } else {\n            callback(response);\n            redisClient.quit();\n        }\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "let SL_REDIS = require('slappforge-sdk-redis');\nlet clusterManager = require('./ClusterManager');\nconst redis = new SL_REDIS.Redis(clusterManager);\n\nexports.handler = function (event, context, callback) {\n    // You must always quit the redis client after it's used\n    redis.set({\n        clusterIdentifier: 'k',\n        params: [{\n            key: 'FName',\n            value: 'kumu'\n        }, {\n            key: 'LName',\n            value: 'rupe'\n        }]\n    }, function (error, response, redisClient) {\n        if (error) {\n            callback(error);\n        } else {\n            callback(response);\n            redisClient.quit();\n        }\n        // You must always quit the redis client after it's used\n        redis.scard({\n            clusterIdentifier: 'k',\n            params: ['1']\n        }, function (error, response, redisClient) {\n            if (error) {\n                callback(error);\n            } else {\n                callback(response)\n                redisClient.quit();\n            }\n        });\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -31,7 +31,16 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": []
+        "triggers": [],
+        "testCases": {
+          "6bd2ad6c-adb8-4968-b20d-8e4e6f107224": {
+            "id": "6bd2ad6c-adb8-4968-b20d-8e4e6f107224",
+            "name": "Test event",
+            "functionId": "49a2e9ff-f2c0-4f3f-956b-8beec5f64fb2",
+            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "eventTemplate": "hello-world"
+          }
+        }
       },
       "8c2457ad-0cf5-457e-b7d5-cdb34ba8c58a": {
         "id": "8c2457ad-0cf5-457e-b7d5-cdb34ba8c58a",
@@ -60,8 +69,11 @@
             "engineType": "redis",
             "clusterSpec": {
               "instanceFamily": "t2",
+              "deployedInstanceFamily": "t2",
               "nodeTypeClass": "cache.t2.small",
+              "deployedNodeTypeClass": "cache.t2.small",
               "engineVersion": "5.0.4",
+              "deployedEngineVersion": "5.0.4",
               "clusterModeEnabled": false,
               "autoFailoverEnabled": true,
               "numOfShards": 3,
@@ -86,9 +98,9 @@
                 "subnetIPv4CIDR": "10.0.0.0/20"
               }
             },
-            "host": "",
-            "doesExist": false,
-            "alreadyDeployed": false,
+            "host": "k.y6jiqb.ng.0001.use1.cache.amazonaws.com",
+            "doesExist": true,
+            "alreadyDeployed": true,
             "redisClient": "",
             "external": false
           },
@@ -97,22 +109,22 @@
           "enableInject": true,
           "isGlobalEditMode": false,
           "isClusterSelectionValid": true,
-          "isNewFromGlobal": false,
-          "mode": 0,
+          "isNewFromGlobal": true,
+          "mode": 1,
           "operation": {
-            "str": "REDIS_SET",
-            "operation": "set",
-            "displayName": "SET",
+            "str": "REDIS_SCARD",
+            "operation": "scard",
+            "displayName": "SCARD",
             "type": {
-              "str": "REDIS_STRINGS",
-              "type": "strings",
-              "displayName": "STRINGS"
+              "str": "REDIS_SETS",
+              "type": "sets",
+              "displayName": "SETS"
             }
           },
           "params": [],
           "projectRegion": "us-east-1",
           "reusableMode": false,
-          "showOperations": true,
+          "showOperations": "k",
           "validator": {
             "validatableFields": {},
             "validity": true
@@ -153,7 +165,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1565604911688
+    "lastSave": 1565607262549
   },
   "VCS_STATE": {
     "provider": "GitHub",

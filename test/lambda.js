@@ -20,6 +20,18 @@ exports.handler = function (event, context, callback) {
             callback(response);
             redisClient.quit();
         }
+        // You must always quit the redis client after it's used
+        redis.scard({
+            clusterIdentifier: 'k',
+            params: ['1']
+        }, function (error, response, redisClient) {
+            if (error) {
+                callback(error);
+            } else {
+                callback(response)
+                redisClient.quit();
+            }
+        });
     });
 
     callback(null, { "message": "Successfully executed" });
