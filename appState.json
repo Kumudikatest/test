@@ -23,7 +23,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "test/lambda.js",
-        "code": "let SL_REDIS = require('slappforge-sdk-redis');\nlet clusterManager = require('./ClusterManager');\nconst redis = new SL_REDIS.Redis(clusterManager);\n\nexports.handler = function (event, context, callback) {\n    // You must always quit the redis client after it's used\n    redis.set({\n        clusterIdentifier: 'k',\n        params: [{\n            key: 'FName',\n            value: 'kumu'\n        }, {\n            key: 'LName',\n            value: 'rupe'\n        }]\n    }, function (error, response, redisClient) {\n        if (error) {\n            callback(error);\n        } else {\n            callback(response);\n            redisClient.quit();\n        }\n        // You must always quit the redis client after it's used\n        redis.scard({\n            clusterIdentifier: 'k',\n            params: ['1']\n        }, function (error, response, redisClient) {\n            if (error) {\n                callback(error);\n            } else {\n                callback(response)\n                redisClient.quit();\n            }\n        });\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "exports.handler = function (event, context, callback) {\n    \n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -165,7 +165,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1565607262549
+    "lastSave": 1565607409844
   },
   "VCS_STATE": {
     "provider": "GitHub",
