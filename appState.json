@@ -1,344 +1,45 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "8a3da9ce-837c-49ac-81ea-007f5efd94c3": {
-        "id": "8a3da9ce-837c-49ac-81ea-007f5efd94c3",
+      "7eb21b0f-f079-40cc-814e-0cf2de065ad0": {
+        "id": "7eb21b0f-f079-40cc-814e-0cf2de065ad0",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "3b1c7df9-d5a6-4133-81ca-4ac1b0cb428b"
+          "7989fbcd-0754-4af3-a03c-0e7bca9472de"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "3b1c7df9-d5a6-4133-81ca-4ac1b0cb428b": {
-        "id": "3b1c7df9-d5a6-4133-81ca-4ac1b0cb428b",
-        "parent": "8a3da9ce-837c-49ac-81ea-007f5efd94c3",
+      "7989fbcd-0754-4af3-a03c-0e7bca9472de": {
+        "id": "7989fbcd-0754-4af3-a03c-0e7bca9472de",
+        "parent": "7eb21b0f-f079-40cc-814e-0cf2de065ad0",
         "name": "lambda.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
         "filePath": "test/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst cognito_idp = new AWS.CognitoIdentityServiceProvider();\n\nexports.handler = function (event, context, callback) {\n    cognito_idp.listUsers({\n        UserPoolId: \"us-east-1_D10y3fy0o\",\n        Limit: 100\n    }, function (error, data) {\n        if (error) {\n            // implement error handling logic here\n            throw error;\n        }\n        // your logic goes within this block\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
           "timeout": 60,
           "memory": 128,
-          "layers": [
-            "arn:aws:lambda:us-east-2:123456789012:layer:my-layer:3"
-          ],
-          "vpc": "vpc-ee1ef195",
-          "subNets": [
-            "subnet-993076a6"
-          ],
-          "secGroups": [
-            "sg-8dcf1bc5"
-          ]
+          "layers": []
         },
-        "triggers": [
-          {
-            "resourceName": "apigusEast1sachithraAPInameget",
-            "config": {}
-          }
-        ]
+        "triggers": []
       }
     },
     "deletedFiles": [],
-    "rootNode": "8a3da9ce-837c-49ac-81ea-007f5efd94c3",
+    "rootNode": "7eb21b0f-f079-40cc-814e-0cf2de065ad0",
     "openFiles": [
-      "3b1c7df9-d5a6-4133-81ca-4ac1b0cb428b"
+      "7989fbcd-0754-4af3-a03c-0e7bca9472de"
     ],
-    "currentFileId": "3b1c7df9-d5a6-4133-81ca-4ac1b0cb428b",
-    "resources": {
-      "cognitotest": {
-        "name": "cognitotest",
-        "type": "CognitoIdentityServiceProvider",
-        "config": {
-          "mode": 1,
-          "name": "test",
-          "arn": "arn:aws:cognito-idp:us-east-1:318300609668:userpool/us-east-1_D10y3fy0o",
-          "userPool": {
-            "Id": "us-east-1_D10y3fy0o",
-            "Name": "test",
-            "LambdaConfig": {},
-            "Policies": {
-              "PasswordPolicy": {
-                "MinimumLength": 8,
-                "RequireUppercase": true,
-                "RequireLowercase": true,
-                "RequireNumbers": true,
-                "RequireSymbols": true
-              }
-            },
-            "SmsVerificationMessage": "Your verification code is {####}. ",
-            "EmailVerificationMessage": "Your verification code is {####}. ",
-            "EmailVerificationSubject": "Your verification code",
-            "VerificationMessageTemplate": {
-              "SmsMessage": "Your verification code is {####}. ",
-              "EmailMessage": "Your verification code is {####}. ",
-              "EmailSubject": "Your verification code",
-              "DefaultEmailOption": "CONFIRM_WITH_CODE"
-            },
-            "SmsAuthenticationMessage": "Your authentication code is {####}. ",
-            "MfaConfiguration": "OFF",
-            "EmailConfiguration": {},
-            "UserPoolTags": {},
-            "AdminCreateUserConfig": {
-              "AllowAdminCreateUserOnly": false,
-              "UnusedAccountValidityDays": 7,
-              "InviteMessageTemplate": {
-                "SMSMessage": "Your username is {username} and temporary password is {####}. ",
-                "EmailMessage": "Your username is {username} and temporary password is {####}. ",
-                "EmailSubject": "Your temporary password"
-              }
-            },
-            "SchemaAttributes": [
-              {
-                "Name": "sub",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": false,
-                "Required": true,
-                "StringAttributeConstraints": {
-                  "MinLength": "1",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "name",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "given_name",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "family_name",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "middle_name",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "nickname",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "preferred_username",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "profile",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "picture",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "website",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "email",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": true,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "email_verified",
-                "AttributeDataType": "Boolean",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false
-              },
-              {
-                "Name": "gender",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "birthdate",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "10",
-                  "MaxLength": "10"
-                }
-              },
-              {
-                "Name": "zoneinfo",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "locale",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "phone_number",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "phone_number_verified",
-                "AttributeDataType": "Boolean",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false
-              },
-              {
-                "Name": "address",
-                "AttributeDataType": "String",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "StringAttributeConstraints": {
-                  "MinLength": "0",
-                  "MaxLength": "2048"
-                }
-              },
-              {
-                "Name": "updated_at",
-                "AttributeDataType": "Number",
-                "DeveloperOnlyAttribute": false,
-                "Mutable": true,
-                "Required": false,
-                "NumberAttributeConstraints": {
-                  "MinValue": "0"
-                }
-              }
-            ]
-          }
-        }
-      },
-      "apigusEast1sachithraAPInameget": {
-        "name": "apigusEast1sachithraAPInameget",
-        "type": "API_GATEWAY",
-        "config": {
-          "selectedRegion": "us-east-1",
-          "apiMode": 1,
-          "apiName": "sachithraAPIname",
-          "apiId": "052p9kjn18",
-          "endpointType": "REGIONAL",
-          "rootResourceId": "zrjp6rdv3b",
-          "existingResources": {
-            "/": "zrjp6rdv3b"
-          },
-          "resourceMode": 1,
-          "resourcePath": "/",
-          "resourceName": "",
-          "resourceId": "zrjp6rdv3b",
-          "restMethod": "GET",
-          "proxyIntegration": false,
-          "enableCORS": false,
-          "stageMode": 1,
-          "stageName": "Test1",
-          "stageDeploymentId": "oyeqjr",
-          "mode": 1
-        }
-      }
-    },
+    "currentFileId": "7989fbcd-0754-4af3-a03c-0e7bca9472de",
+    "resources": {},
     "customTemplate": {
       "dialect": null,
       "definitions": {}
@@ -354,15 +55,7 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {
-        "aws-sdk": {
-          "name": "aws-sdk",
-          "language": "javascript",
-          "version": "2.176.0",
-          "dev": true,
-          "notRemovable": false
-        }
-      }
+      "dependencies": {}
     }
   },
   "PROJECT_META": {
@@ -372,7 +65,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1566386310348
+    "lastSave": 1566390074512
   },
   "VCS_STATE": {
     "provider": "GitHub",
