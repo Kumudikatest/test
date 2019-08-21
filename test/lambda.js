@@ -4,7 +4,7 @@ const cognito_idp = new AWS.CognitoIdentityServiceProvider();
 exports.handler = function (event, context, callback) {
     cognito_idp.listUsers({
         UserPoolId: "us-east-1_D10y3fy0o",
-        Limit: 10
+        Limit: 100
     }, function (error, data) {
         if (error) {
             // implement error handling logic here
