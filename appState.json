@@ -28,9 +28,23 @@
           "handler": "handler",
           "timeout": 60,
           "memory": 128,
-          "layers": []
+          "layers": [
+            "arn:aws:lambda:us-east-2:123456789012:layer:my-layer:3"
+          ],
+          "vpc": "vpc-ee1ef195",
+          "subNets": [
+            "subnet-993076a6"
+          ],
+          "secGroups": [
+            "sg-8dcf1bc5"
+          ]
         },
-        "triggers": []
+        "triggers": [
+          {
+            "resourceName": "apigusEast1sachithraAPInameget",
+            "config": {}
+          }
+        ]
       }
     },
     "deletedFiles": [],
@@ -297,6 +311,32 @@
             ]
           }
         }
+      },
+      "apigusEast1sachithraAPInameget": {
+        "name": "apigusEast1sachithraAPInameget",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "sachithraAPIname",
+          "apiId": "052p9kjn18",
+          "endpointType": "REGIONAL",
+          "rootResourceId": "zrjp6rdv3b",
+          "existingResources": {
+            "/": "zrjp6rdv3b"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/",
+          "resourceName": "",
+          "resourceId": "zrjp6rdv3b",
+          "restMethod": "GET",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "Test1",
+          "stageDeploymentId": "oyeqjr",
+          "mode": 1
+        }
       }
     },
     "customTemplate": {
@@ -332,7 +372,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1566386137733
+    "lastSave": 1566386310348
   },
   "VCS_STATE": {
     "provider": "GitHub",
