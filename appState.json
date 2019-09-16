@@ -1,21 +1,21 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "4e72e716-04b6-4bc1-a80f-4b3f5029e9f6": {
-        "id": "4e72e716-04b6-4bc1-a80f-4b3f5029e9f6",
+      "a1c33849-1d4e-43bd-97de-ae08e6a17599": {
+        "id": "a1c33849-1d4e-43bd-97de-ae08e6a17599",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "a8c5b857-fe99-471e-a892-1653fcb81867"
+          "b0216474-839e-489c-8641-c89069110bf1"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "a8c5b857-fe99-471e-a892-1653fcb81867": {
-        "id": "a8c5b857-fe99-471e-a892-1653fcb81867",
-        "parent": "4e72e716-04b6-4bc1-a80f-4b3f5029e9f6",
+      "b0216474-839e-489c-8641-c89069110bf1": {
+        "id": "b0216474-839e-489c-8641-c89069110bf1",
+        "parent": "a1c33849-1d4e-43bd-97de-ae08e6a17599",
         "name": "function.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
@@ -36,8 +36,8 @@
           }
         ]
       },
-      "6dbff81b-d1cb-4cf9-b010-9834f80753c7": {
-        "id": "6dbff81b-d1cb-4cf9-b010-9834f80753c7",
+      "acf7da7d-f629-4f50-9bf0-bbf97d54b0fb": {
+        "id": "acf7da7d-f629-4f50-9bf0-bbf97d54b0fb",
         "parent": null,
         "name": "index.js",
         "type": "JS_FILE",
@@ -47,8 +47,8 @@
         "filePath": "index.js",
         "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.testfunction = require(\"./test/function.js\").handler;"
       },
-      "a7196fea-99bc-4c69-b368-ae22c454ab66": {
-        "id": "a7196fea-99bc-4c69-b368-ae22c454ab66",
+      "62aa864d-d732-4b1c-9209-0d1f6522d444": {
+        "id": "62aa864d-d732-4b1c-9209-0d1f6522d444",
         "parent": null,
         "name": "main.py",
         "type": "PYTHON_FILE",
@@ -59,11 +59,11 @@
         "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
       }
     },
-    "rootNode": "4e72e716-04b6-4bc1-a80f-4b3f5029e9f6",
+    "rootNode": "a1c33849-1d4e-43bd-97de-ae08e6a17599",
     "openFiles": [
-      "a8c5b857-fe99-471e-a892-1653fcb81867"
+      "b0216474-839e-489c-8641-c89069110bf1"
     ],
-    "currentFileId": "a8c5b857-fe99-471e-a892-1653fcb81867",
+    "currentFileId": "b0216474-839e-489c-8641-c89069110bf1",
     "resources": {
       "http-trigger": {
         "name": "http-trigger",
@@ -84,10 +84,10 @@
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-central1",
+    "projectRegion": "us-east1",
     "platform": "GCP",
     "platformRegions": {},
-    "lastSave": 1568621564475
+    "lastSave": 1568621874659
   },
   "VCS_STATE": {
     "provider": "GitHub",
