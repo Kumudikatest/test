@@ -1,11 +1,11 @@
 module.exports = function() {
     this.dbConnections = [];
 
-    this.dbConnections["k"] = {
-        host: "k.czndmdv7dw6d.us-east-1.rds.amazonaws.com",
-        port: "1234",
-        user: "k",
-        password: process.env.Password_rdsK,
-        database: "k"
+    this.dbConnections["sdfg"] = {
+        host: process.env.EndPoint_rdsSdfg,
+        port: process.env.Port_rdsSdfg,
+        user: process.env.User_rdsSdfg,
+        password: process.env.Password_rdsSdfg,
+        database: "wert"
     };
 };
