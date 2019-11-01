@@ -1,21 +1,21 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "fce3814a-e777-4809-b20b-e9dd7d39d727": {
-        "id": "fce3814a-e777-4809-b20b-e9dd7d39d727",
+      "5220270d-0843-4a68-b478-184ce318ca99": {
+        "id": "5220270d-0843-4a68-b478-184ce318ca99",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "fdc5e4f7-761a-4f33-9e9d-a32dcbfb285e"
+          "06bb0601-88d2-4e7e-ba29-42a7fe5a997c"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "fdc5e4f7-761a-4f33-9e9d-a32dcbfb285e": {
-        "id": "fdc5e4f7-761a-4f33-9e9d-a32dcbfb285e",
-        "parent": "fce3814a-e777-4809-b20b-e9dd7d39d727",
+      "06bb0601-88d2-4e7e-ba29-42a7fe5a997c": {
+        "id": "06bb0601-88d2-4e7e-ba29-42a7fe5a997c",
+        "parent": "5220270d-0843-4a68-b478-184ce318ca99",
         "name": "lambda.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
@@ -30,23 +30,14 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": [],
-        "testCases": {
-          "03706eb7-93e4-46db-a328-c392ddcd5fee": {
-            "id": "03706eb7-93e4-46db-a328-c392ddcd5fee",
-            "name": "Test event",
-            "functionId": "fdc5e4f7-761a-4f33-9e9d-a32dcbfb285e",
-            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
-            "eventTemplate": "hello-world"
-          }
-        }
+        "triggers": []
       }
     },
-    "rootNode": "fce3814a-e777-4809-b20b-e9dd7d39d727",
+    "rootNode": "5220270d-0843-4a68-b478-184ce318ca99",
     "openFiles": [
-      "fdc5e4f7-761a-4f33-9e9d-a32dcbfb285e"
+      "06bb0601-88d2-4e7e-ba29-42a7fe5a997c"
     ],
-    "currentFileId": "fdc5e4f7-761a-4f33-9e9d-a32dcbfb285e",
+    "currentFileId": "06bb0601-88d2-4e7e-ba29-42a7fe5a997c",
     "resources": {},
     "customTemplate": {
       "dialect": null,
@@ -73,7 +64,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1572594910856
+    "lastSave": 1572598391228
   },
   "VCS_STATE": {
     "provider": "GitHub",
