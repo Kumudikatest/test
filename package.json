@@ -1,6 +1,8 @@
 {
-  "name": "test",
+  "name": "tre",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "mysql": "2.17.1"
+  },
   "devDependencies": {}
 }

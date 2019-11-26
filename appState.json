@@ -1,44 +1,77 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "55ee2362-a516-4417-98f6-584c956b7a59": {
-        "id": "55ee2362-a516-4417-98f6-584c956b7a59",
+      "3c3e31de-1c51-4051-be54-be7867870c3b": {
+        "id": "3c3e31de-1c51-4051-be54-be7867870c3b",
         "parent": null,
-        "name": "test",
+        "name": "tre",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "9023ecbc-41cc-4ef8-8f32-252bfb0a3fe0"
+          "432c71df-718e-4807-9f07-e56708fcab47"
         ],
         "isRemovable": false,
-        "filePath": "test"
+        "filePath": "tre"
       },
-      "9023ecbc-41cc-4ef8-8f32-252bfb0a3fe0": {
-        "id": "9023ecbc-41cc-4ef8-8f32-252bfb0a3fe0",
-        "parent": "55ee2362-a516-4417-98f6-584c956b7a59",
-        "name": "lambda.js",
+      "432c71df-718e-4807-9f07-e56708fcab47": {
+        "id": "432c71df-718e-4807-9f07-e56708fcab47",
+        "parent": "3c3e31de-1c51-4051-be54-be7867870c3b",
+        "name": "function.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "filePath": "tre/function.js",
+        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
         "config": {
-          "runtime": "nodejs8.10",
-          "handler": "handler",
+          "runtime": "nodejs8",
           "timeout": 60,
           "memory": 128,
-          "layers": []
+          "triggerType": 0
         },
-        "triggers": []
+        "triggers": [
+          {
+            "resourceName": "http-trigger",
+            "config": {}
+          }
+        ],
+        "testCases": {}
+      },
+      "caff2cd0-80bc-434a-9a23-9d5b75b9215d": {
+        "id": "caff2cd0-80bc-434a-9a23-9d5b75b9215d",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js",
+        "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.trefunction = require(\"./tre/function.js\").handler;"
+      },
+      "de7b6dc5-add9-4d9e-9391-057b49085d76": {
+        "id": "de7b6dc5-add9-4d9e-9391-057b49085d76",
+        "parent": null,
+        "name": "main.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "main.py",
+        "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
       }
     },
-    "rootNode": "55ee2362-a516-4417-98f6-584c956b7a59",
+    "rootNode": "3c3e31de-1c51-4051-be54-be7867870c3b",
     "openFiles": [
-      "9023ecbc-41cc-4ef8-8f32-252bfb0a3fe0"
+      "432c71df-718e-4807-9f07-e56708fcab47"
     ],
-    "currentFileId": "9023ecbc-41cc-4ef8-8f32-252bfb0a3fe0",
-    "resources": {},
+    "currentFileId": "432c71df-718e-4807-9f07-e56708fcab47",
+    "resources": {
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {}
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": null
@@ -46,7 +79,7 @@
     "envVariables": [
       {
         "lambdaId": "all",
-        "varKey": "SIGMA_AWS_ACC_ID",
+        "varKey": "AWS_REGION",
         "varValue": null,
         "shouldPersist": false,
         "displayOnly": false,
@@ -54,17 +87,26 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {}
+      "dependencies": {
+        "mysql": {
+          "name": "mysql",
+          "version": "2.17.1",
+          "dev": false,
+          "language": "javascript"
+        }
+      }
     }
   },
   "PROJECT_META": {
-    "projectName": "test",
+    "projectName": "tre",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east-1",
-    "platform": "AWS",
-    "platformRegions": {},
-    "lastSave": 1572846458613
+    "projectRegion": "us-east1",
+    "platform": "GCP",
+    "platformRegions": {
+      "AWS": "us-east-1"
+    },
+    "lastSave": 1574754088792
   },
   "VCS_STATE": {
     "provider": "GitHub",
