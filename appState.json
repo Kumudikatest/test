@@ -1,75 +1,83 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "3c3e31de-1c51-4051-be54-be7867870c3b": {
-        "id": "3c3e31de-1c51-4051-be54-be7867870c3b",
+      "426437c5-1324-4e58-b2ca-efffb40c0b0d": {
+        "id": "426437c5-1324-4e58-b2ca-efffb40c0b0d",
         "parent": null,
-        "name": "tre",
+        "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "432c71df-718e-4807-9f07-e56708fcab47"
+          "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2"
         ],
         "isRemovable": false,
-        "filePath": "tre"
+        "filePath": "test"
       },
-      "432c71df-718e-4807-9f07-e56708fcab47": {
-        "id": "432c71df-718e-4807-9f07-e56708fcab47",
-        "parent": "3c3e31de-1c51-4051-be54-be7867870c3b",
-        "name": "function.js",
+      "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2": {
+        "id": "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2",
+        "parent": "426437c5-1324-4e58-b2ca-efffb40c0b0d",
+        "name": "lambda.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "tre/function.js",
-        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
+        "filePath": "test/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = async (event) => {\n    ddb.scan({\n        TableName: \"hirutes\",\n        ExpressionAttributeValues: {}\n    }).promise()\n        .then(data => {\n            // your code goes here\n            console.log(data);\n        })\n        .catch(err => {\n            // error handling goes here\n            console.log(err);\n        });\n\n    return { \"message\": \"Successfully executed\" };\n};",
         "config": {
-          "runtime": "nodejs8",
+          "runtime": "nodejs10.x",
+          "handler": "handler",
           "timeout": 60,
           "memory": 128,
-          "triggerType": 0
+          "layers": []
         },
-        "triggers": [
-          {
-            "resourceName": "http-trigger",
-            "config": {}
+        "triggers": [],
+        "testCases": {
+          "438dcbc9-8035-4f74-adc3-4a355fb612ef": {
+            "id": "438dcbc9-8035-4f74-adc3-4a355fb612ef",
+            "name": "Test event",
+            "functionId": "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
           }
-        ],
-        "testCases": {}
-      },
-      "caff2cd0-80bc-434a-9a23-9d5b75b9215d": {
-        "id": "caff2cd0-80bc-434a-9a23-9d5b75b9215d",
-        "parent": null,
-        "name": "index.js",
-        "type": "JS_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "index.js",
-        "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.trefunction = require(\"./tre/function.js\").handler;"
-      },
-      "de7b6dc5-add9-4d9e-9391-057b49085d76": {
-        "id": "de7b6dc5-add9-4d9e-9391-057b49085d76",
-        "parent": null,
-        "name": "main.py",
-        "type": "PYTHON_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "main.py",
-        "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
+        }
       }
     },
-    "rootNode": "3c3e31de-1c51-4051-be54-be7867870c3b",
+    "rootNode": "426437c5-1324-4e58-b2ca-efffb40c0b0d",
     "openFiles": [
-      "432c71df-718e-4807-9f07-e56708fcab47"
+      "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2"
     ],
-    "currentFileId": "432c71df-718e-4807-9f07-e56708fcab47",
+    "currentFileId": "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2",
     "resources": {
-      "http-trigger": {
-        "name": "http-trigger",
-        "type": "http-trigger",
-        "config": {}
+      "ddbhirutes": {
+        "name": "ddbhirutes",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "operation": "scan",
+          "table": {
+            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/hirutes",
+            "name": "hirutes",
+            "partitionKey": "id",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "payPerRequest": true,
+            "mode": 1
+          },
+          "isGlobalEditMode": false,
+          "parameters": {
+            "Key": {},
+            "Item": {},
+            "ExpressionAttributeValues": {}
+          },
+          "triggerParams": {},
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          },
+          "valid": true
+        }
       }
     },
     "customTemplate": {
@@ -79,7 +87,7 @@
     "envVariables": [
       {
         "lambdaId": "all",
-        "varKey": "AWS_REGION",
+        "varKey": "SIGMA_AWS_ACC_ID",
         "varValue": null,
         "shouldPersist": false,
         "displayOnly": false,
@@ -88,25 +96,24 @@
     ],
     "packageJSON": {
       "dependencies": {
-        "mysql": {
-          "name": "mysql",
-          "version": "2.17.1",
-          "dev": false,
-          "language": "javascript"
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
         }
       }
     }
   },
   "PROJECT_META": {
-    "projectName": "tre",
+    "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east1",
-    "platform": "GCP",
-    "platformRegions": {
-      "AWS": "us-east-1"
-    },
-    "lastSave": 1574754088792
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1576489279904
   },
   "VCS_STATE": {
     "provider": "GitHub",
