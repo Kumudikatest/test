@@ -1,28 +1,27 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "426437c5-1324-4e58-b2ca-efffb40c0b0d": {
-        "id": "426437c5-1324-4e58-b2ca-efffb40c0b0d",
+      "aec952a7-486f-48db-86ad-d60fbc19ab0b": {
+        "id": "aec952a7-486f-48db-86ad-d60fbc19ab0b",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2"
+          "d7a2dd7c-6a27-4312-b651-da4e98a5aa61"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2": {
-        "id": "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2",
-        "parent": "426437c5-1324-4e58-b2ca-efffb40c0b0d",
+      "d7a2dd7c-6a27-4312-b651-da4e98a5aa61": {
+        "id": "d7a2dd7c-6a27-4312-b651-da4e98a5aa61",
+        "parent": "aec952a7-486f-48db-86ad-d60fbc19ab0b",
         "name": "lambda.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
         "filePath": "test/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = async (event) => {\n    ddb.scan({\n        TableName: \"hirutes\",\n        ExpressionAttributeValues: {}\n    }).promise()\n        .then(data => {\n            // your code goes here\n            console.log(data);\n        })\n        .catch(err => {\n            // error handling goes here\n            console.log(err);\n        });\n\n    return { \"message\": \"Successfully executed\" };\n};",
         "config": {
           "runtime": "nodejs10.x",
           "handler": "handler",
@@ -30,40 +29,51 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": [],
-        "testCases": {
-          "438dcbc9-8035-4f74-adc3-4a355fb612ef": {
-            "id": "438dcbc9-8035-4f74-adc3-4a355fb612ef",
-            "name": "Test event",
-            "functionId": "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2",
-            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
-            "eventTemplate": "hello-world"
+        "triggers": [
+          {
+            "resourceName": "s3cloud9Ktest",
+            "config": {
+              "type": "s3:ObjectCreated:CompleteMultipartUpload",
+              "keyPrefix": "",
+              "keySuffix": ""
+            }
           }
-        }
+        ]
       }
     },
-    "rootNode": "426437c5-1324-4e58-b2ca-efffb40c0b0d",
+    "rootNode": "aec952a7-486f-48db-86ad-d60fbc19ab0b",
     "openFiles": [
-      "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2"
+      "d7a2dd7c-6a27-4312-b651-da4e98a5aa61"
     ],
-    "currentFileId": "8ab9d4dd-8efc-4cfe-b873-ffd9ba2eb1a2",
+    "currentFileId": "d7a2dd7c-6a27-4312-b651-da4e98a5aa61",
     "resources": {
-      "ddbhirutes": {
-        "name": "ddbhirutes",
-        "type": "DynamoDB",
+      "s3cloud9Ktest": {
+        "name": "s3cloud9Ktest",
+        "type": "S3",
         "config": {
           "mode": 1,
+          "bucket": {
+            "region": "eu-west-2",
+            "name": "cloud9-ktest"
+          }
+        }
+      },
+      "ddbnew": {
+        "name": "ddbnew",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 0,
           "operation": "scan",
           "table": {
-            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/hirutes",
-            "name": "hirutes",
-            "partitionKey": "id",
+            "arn": "",
+            "name": "new",
+            "partitionKey": "ID",
             "partitionKeyType": "S",
             "hasSortKey": false,
             "sortKey": "",
             "sortKeyType": "S",
             "payPerRequest": true,
-            "mode": 1
+            "mode": 0
           },
           "isGlobalEditMode": false,
           "parameters": {
@@ -110,10 +120,10 @@
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east-1",
+    "projectRegion": "eu-west-2",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1576489279904
+    "lastSave": 1576669683516
   },
   "VCS_STATE": {
     "provider": "GitHub",
