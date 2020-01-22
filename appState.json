@@ -1,21 +1,21 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "d5f52df3-8d89-4df8-9067-5da50c0a375a": {
-        "id": "d5f52df3-8d89-4df8-9067-5da50c0a375a",
+      "eb14dc7c-5076-4c7a-b3d8-7892c00c1712": {
+        "id": "eb14dc7c-5076-4c7a-b3d8-7892c00c1712",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22"
+          "20b43bbd-b4cb-4065-b14e-9f5178f4589c"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22": {
-        "id": "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22",
-        "parent": "d5f52df3-8d89-4df8-9067-5da50c0a375a",
+      "20b43bbd-b4cb-4065-b14e-9f5178f4589c": {
+        "id": "20b43bbd-b4cb-4065-b14e-9f5178f4589c",
+        "parent": "eb14dc7c-5076-4c7a-b3d8-7892c00c1712",
         "name": "lambda.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
@@ -31,56 +31,43 @@
         },
         "triggers": [
           {
-            "resourceName": "apigusEast1TestAPIMyLambdaput",
+            "resourceName": "apigusEast1hiru1312sampleany",
             "config": {}
           }
-        ],
-        "testCases": {
-          "2b572e46-f5e1-4621-b038-d23da52acae3": {
-            "id": "2b572e46-f5e1-4621-b038-d23da52acae3",
-            "name": "Test event",
-            "functionId": "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22",
-            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
-            "eventTemplate": "hello-world"
-          }
-        }
+        ]
       }
     },
-    "rootNode": "d5f52df3-8d89-4df8-9067-5da50c0a375a",
+    "rootNode": "eb14dc7c-5076-4c7a-b3d8-7892c00c1712",
     "openFiles": [
-      "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22"
+      "20b43bbd-b4cb-4065-b14e-9f5178f4589c"
     ],
-    "currentFileId": "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22",
+    "currentFileId": "20b43bbd-b4cb-4065-b14e-9f5178f4589c",
     "resources": {
-      "apigusEast1TestAPIMyLambdaput": {
-        "name": "apigusEast1TestAPIMyLambdaput",
+      "apigusEast1hiru1312sampleany": {
+        "name": "apigusEast1hiru1312sampleany",
         "type": "API_GATEWAY",
         "config": {
           "selectedRegion": "us-east-1",
           "apiMode": 1,
-          "apiName": "TestAPI",
-          "apiId": "0itznun7w3",
-          "endpointType": "EDGE",
-          "rootResourceId": "h2lelj6j7k",
+          "apiName": "hiru1312",
+          "apiId": "9jlzhlqmxj",
+          "endpointType": "REGIONAL",
+          "rootResourceId": "6lfukhtixf",
           "existingResources": {
-            "/MyLambda": "98nqbj",
-            "/": "h2lelj6j7k",
-            "/newchange/test": "k6pdhn",
-            "/newchange": "q1ox7l",
-            "/testWithSlash": "q4m4g1",
-            "/testtwospeciallambda": "q4szm3",
-            "/testtwospecialkumutest": "wey3lk"
+            "/": "6lfukhtixf",
+            "/sample": "tc5zpx",
+            "/sample/hiru": "xwhexr"
           },
           "resourceMode": 1,
-          "resourcePath": "/MyLambda",
-          "resourceName": "MyLambda",
-          "resourceId": "98nqbj",
-          "restMethod": "PUT",
+          "resourcePath": "/sample",
+          "resourceName": "sample",
+          "resourceId": "tc5zpx",
+          "restMethod": "ANY",
           "proxyIntegration": false,
           "enableCORS": false,
           "stageMode": 1,
-          "stageName": "socks",
-          "stageDeploymentId": "h4x4c6",
+          "stageName": "Test",
+          "stageDeploymentId": "1om2m4",
           "mode": 1
         }
       }
@@ -110,7 +97,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1579679051979
+    "lastSave": 1579683931317
   },
   "VCS_STATE": {
     "provider": "GitHub",
