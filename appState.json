@@ -1,21 +1,21 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "aec952a7-486f-48db-86ad-d60fbc19ab0b": {
-        "id": "aec952a7-486f-48db-86ad-d60fbc19ab0b",
+      "d5f52df3-8d89-4df8-9067-5da50c0a375a": {
+        "id": "d5f52df3-8d89-4df8-9067-5da50c0a375a",
         "parent": null,
         "name": "test",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "d7a2dd7c-6a27-4312-b651-da4e98a5aa61"
+          "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22"
         ],
         "isRemovable": false,
         "filePath": "test"
       },
-      "d7a2dd7c-6a27-4312-b651-da4e98a5aa61": {
-        "id": "d7a2dd7c-6a27-4312-b651-da4e98a5aa61",
-        "parent": "aec952a7-486f-48db-86ad-d60fbc19ab0b",
+      "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22": {
+        "id": "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22",
+        "parent": "d5f52df3-8d89-4df8-9067-5da50c0a375a",
         "name": "lambda.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
@@ -31,62 +31,57 @@
         },
         "triggers": [
           {
-            "resourceName": "s3cloud9Ktest",
-            "config": {
-              "type": "s3:ObjectCreated:CompleteMultipartUpload",
-              "keyPrefix": "",
-              "keySuffix": ""
-            }
+            "resourceName": "apigusEast1TestAPIMyLambdaput",
+            "config": {}
           }
-        ]
-      }
-    },
-    "rootNode": "aec952a7-486f-48db-86ad-d60fbc19ab0b",
-    "openFiles": [
-      "d7a2dd7c-6a27-4312-b651-da4e98a5aa61"
-    ],
-    "currentFileId": "d7a2dd7c-6a27-4312-b651-da4e98a5aa61",
-    "resources": {
-      "s3cloud9Ktest": {
-        "name": "s3cloud9Ktest",
-        "type": "S3",
-        "config": {
-          "mode": 1,
-          "bucket": {
-            "region": "eu-west-2",
-            "name": "cloud9-ktest"
+        ],
+        "testCases": {
+          "2b572e46-f5e1-4621-b038-d23da52acae3": {
+            "id": "2b572e46-f5e1-4621-b038-d23da52acae3",
+            "name": "Test event",
+            "functionId": "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22",
+            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "eventTemplate": "hello-world"
           }
         }
-      },
-      "ddbnew": {
-        "name": "ddbnew",
-        "type": "DynamoDB",
+      }
+    },
+    "rootNode": "d5f52df3-8d89-4df8-9067-5da50c0a375a",
+    "openFiles": [
+      "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22"
+    ],
+    "currentFileId": "df70768d-7f41-4cc7-a4a8-cf89ddd3fc22",
+    "resources": {
+      "apigusEast1TestAPIMyLambdaput": {
+        "name": "apigusEast1TestAPIMyLambdaput",
+        "type": "API_GATEWAY",
         "config": {
-          "mode": 0,
-          "operation": "scan",
-          "table": {
-            "arn": "",
-            "name": "new",
-            "partitionKey": "ID",
-            "partitionKeyType": "S",
-            "hasSortKey": false,
-            "sortKey": "",
-            "sortKeyType": "S",
-            "payPerRequest": true,
-            "mode": 0
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "TestAPI",
+          "apiId": "0itznun7w3",
+          "endpointType": "EDGE",
+          "rootResourceId": "h2lelj6j7k",
+          "existingResources": {
+            "/MyLambda": "98nqbj",
+            "/": "h2lelj6j7k",
+            "/newchange/test": "k6pdhn",
+            "/newchange": "q1ox7l",
+            "/testWithSlash": "q4m4g1",
+            "/testtwospeciallambda": "q4szm3",
+            "/testtwospecialkumutest": "wey3lk"
           },
-          "isGlobalEditMode": false,
-          "parameters": {
-            "Key": {},
-            "Item": {},
-            "ExpressionAttributeValues": {}
-          },
-          "triggerParams": {},
-          "validator": {
-            "validatableFields": {},
-            "validity": true
-          },
-          "valid": true
+          "resourceMode": 1,
+          "resourcePath": "/MyLambda",
+          "resourceName": "MyLambda",
+          "resourceId": "98nqbj",
+          "restMethod": "PUT",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "socks",
+          "stageDeploymentId": "h4x4c6",
+          "mode": 1
         }
       }
     },
@@ -105,25 +100,17 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {
-        "aws-sdk": {
-          "name": "aws-sdk",
-          "language": "javascript",
-          "version": "2.176.0",
-          "dev": true,
-          "notRemovable": false
-        }
-      }
+      "dependencies": {}
     }
   },
   "PROJECT_META": {
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "eu-west-2",
+    "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1576669683516
+    "lastSave": 1579679051979
   },
   "VCS_STATE": {
     "provider": "GitHub",
