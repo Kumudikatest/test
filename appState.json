@@ -38,10 +38,23 @@
     ],
     "currentFileId": "a77fca74-34ef-4985-83ca-1388b198c662",
     "resources": {
-      "translateResource": {
-        "name": "translateResource",
-        "type": "Translate",
-        "config": {}
+      "ses-kumudika+syd@adroitlogic.com": {
+        "name": "ses-kumudika+syd@adroitlogic.com",
+        "type": "SES",
+        "config": {
+          "selectedIdentity": "kumudika+syd@adroitlogic.com",
+          "projectRegion": "ap-southeast-2",
+          "params": {
+            "to": "kumudika@adroitlogic.com",
+            "cc": "",
+            "bcc": "",
+            "subject": "Test",
+            "body": {
+              "text": "",
+              "html": ""
+            }
+          }
+        }
       }
     },
     "customTemplate": {
@@ -78,7 +91,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1582779509814
+    "lastSave": 1582779792357
   },
   "VCS_STATE": {
     "provider": "GitHub",
