@@ -1,28 +1,18 @@
 let AWS = require('aws-sdk');
-const ses = new AWS.SES();
+const translate = new AWS.Translate();
 
 exports.handler = async (event) => {
-    ses.sendEmail({
-        Destination: {
-            ToAddresses: ['kumudika@adroitlogic.com'],
-            CcAddresses: [],
-            BccAddresses: []
-        },
-        Message: {
-            Body: {
-                Text: {
-                    Data: ``
-                }
-            },
-            Subject: {
-                Data: 'Test'
-            }
-        },
-        Source: 'kumudika+syd@adroitlogic.com',
-    }, function (err, data) {
-        if (err) console.log(err, err.stack); // an error occurred
-        else console.log(data);           // successful response
-    });
+    try {
+        let data = await translate.translateText({
+            SourceLanguageCode: "auto",
+            TargetLanguageCode: "fr",
+            Text: "Hi"
+        }).promise();
+        console.log(data);
+
+    } catch (err) {
+        // error handling goes here
+    };
 
     return { "message": "Successfully executed" };
 };

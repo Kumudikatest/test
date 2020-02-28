@@ -1,8 +1,8 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "a77fca74-34ef-4985-83ca-1388b198c662": {
-        "id": "a77fca74-34ef-4985-83ca-1388b198c662",
+      "1ca76496-de5d-480b-bb7d-2c36568f5242": {
+        "id": "1ca76496-de5d-480b-bb7d-2c36568f5242",
         "parent": null,
         "name": "lambda.js",
         "type": "JS_LAMBDA",
@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "lambda.js",
         "cursor": {
-          "lineNumber": 1,
-          "column": 1
+          "lineNumber": 11,
+          "column": 27
         },
         "config": {
           "runtime": "nodejs10.x",
@@ -21,40 +21,18 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": [],
-        "testCases": {
-          "a18cb225-9046-47eb-8801-bbe62ae9e1ad": {
-            "id": "a18cb225-9046-47eb-8801-bbe62ae9e1ad",
-            "name": "Test event",
-            "functionId": "a77fca74-34ef-4985-83ca-1388b198c662",
-            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
-            "eventTemplate": "hello-world"
-          }
-        }
+        "triggers": []
       }
     },
     "openFiles": [
-      "a77fca74-34ef-4985-83ca-1388b198c662"
+      "1ca76496-de5d-480b-bb7d-2c36568f5242"
     ],
-    "currentFileId": "a77fca74-34ef-4985-83ca-1388b198c662",
+    "currentFileId": "1ca76496-de5d-480b-bb7d-2c36568f5242",
     "resources": {
-      "ses-kumudika+syd@adroitlogic.com": {
-        "name": "ses-kumudika+syd@adroitlogic.com",
-        "type": "SES",
-        "config": {
-          "selectedIdentity": "kumudika+syd@adroitlogic.com",
-          "projectRegion": "ap-southeast-2",
-          "params": {
-            "to": "kumudika@adroitlogic.com",
-            "cc": "",
-            "bcc": "",
-            "subject": "Test",
-            "body": {
-              "text": "",
-              "html": ""
-            }
-          }
-        }
+      "translateResource": {
+        "name": "translateResource",
+        "type": "Translate",
+        "config": {}
       }
     },
     "customTemplate": {
@@ -84,14 +62,14 @@
     }
   },
   "PROJECT_META": {
-    "projectName": "Test",
+    "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "ap-southeast-2",
+    "projectRegion": "us-west-1",
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1582779792357
+    "lastSave": 1582866481426
   },
   "VCS_STATE": {
     "provider": "GitHub",
