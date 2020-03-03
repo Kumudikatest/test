@@ -1,19 +1,29 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "1ca76496-de5d-480b-bb7d-2c36568f5242": {
-        "id": "1ca76496-de5d-480b-bb7d-2c36568f5242",
+      "b23dd896-bf24-4bf2-8771-d70d1bdcb147": {
+        "id": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
         "parent": null,
+        "name": "test",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "ce2930f8-cceb-41a8-ab76-361e19c4e2ad",
+          "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879",
+          "b1f2c104-8670-4800-88f7-5755ef146c94"
+        ],
+        "isRemovable": false,
+        "filePath": "test"
+      },
+      "ce2930f8-cceb-41a8-ab76-361e19c4e2ad": {
+        "id": "ce2930f8-cceb-41a8-ab76-361e19c4e2ad",
+        "parent": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
         "name": "lambda.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "lambda.js",
-        "cursor": {
-          "lineNumber": 11,
-          "column": 27
-        },
+        "filePath": "test/lambda.js",
         "config": {
           "runtime": "nodejs10.x",
           "handler": "handler",
@@ -21,18 +31,70 @@
           "memory": 128,
           "layers": []
         },
+        "triggers": [],
+        "testCases": {
+          "a040fdbd-4e0c-437c-b4cc-f11a3765d2d0": {
+            "id": "a040fdbd-4e0c-437c-b4cc-f11a3765d2d0",
+            "name": "Test event",
+            "functionId": "ce2930f8-cceb-41a8-ab76-361e19c4e2ad",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          }
+        }
+      },
+      "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879": {
+        "id": "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879",
+        "parent": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
+        "name": "fd.py",
+        "type": "PYTHON_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test/fd.py",
+        "config": {
+          "runtime": "python2.7",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
         "triggers": []
+      },
+      "b1f2c104-8670-4800-88f7-5755ef146c94": {
+        "id": "b1f2c104-8670-4800-88f7-5755ef146c94",
+        "parent": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
+        "name": "__init__.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "test/__init__.py"
       }
     },
+    "rootNode": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
     "openFiles": [
-      "1ca76496-de5d-480b-bb7d-2c36568f5242"
+      "ce2930f8-cceb-41a8-ab76-361e19c4e2ad",
+      "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879"
     ],
-    "currentFileId": "1ca76496-de5d-480b-bb7d-2c36568f5242",
+    "currentFileId": "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879",
     "resources": {
-      "translateResource": {
-        "name": "translateResource",
-        "type": "Translate",
-        "config": {}
+      "ses-kumudika@adroitlogic.com": {
+        "name": "ses-kumudika@adroitlogic.com",
+        "type": "SES",
+        "config": {
+          "selectedIdentity": "kumudika@adroitlogic.com",
+          "projectRegion": "us-east-1",
+          "params": {
+            "to": "hirudinee@adroitlogic.com",
+            "cc": "",
+            "bcc": "",
+            "subject": "test",
+            "body": {
+              "text": "",
+              "html": ""
+            }
+          }
+        }
       }
     },
     "customTemplate": {
@@ -47,14 +109,22 @@
         "shouldPersist": false,
         "displayOnly": false,
         "editable": false
+      },
+      {
+        "lambdaId": "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879",
+        "varKey": "PYTHONPATH",
+        "varValue": "/var/runtime:/var/task/test",
+        "shouldPersist": true,
+        "displayOnly": false,
+        "editable": true
       }
     ],
     "packageJSON": {
       "dependencies": {
-        "aws-sdk": {
-          "name": "aws-sdk",
-          "language": "nodejs",
-          "version": "2.176.0",
+        "boto3": {
+          "name": "boto3",
+          "language": "python",
+          "version": "1.9.6",
           "dev": true,
           "notRemovable": false
         }
@@ -65,11 +135,10 @@
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-west-1",
+    "projectRegion": "us-east-1",
     "platform": "AWS",
-    "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1582866481426
+    "lastSave": 1583215303178
   },
   "VCS_STATE": {
     "provider": "GitHub",
