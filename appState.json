@@ -1,56 +1,19 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "b23dd896-bf24-4bf2-8771-d70d1bdcb147": {
-        "id": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
+      "6f9de244-7f1f-4feb-a8db-55e85f66f33e": {
+        "id": "6f9de244-7f1f-4feb-a8db-55e85f66f33e",
         "parent": null,
-        "name": "test",
-        "type": "DIRECTORY",
-        "isDirectory": true,
-        "children": [
-          "ce2930f8-cceb-41a8-ab76-361e19c4e2ad",
-          "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879",
-          "b1f2c104-8670-4800-88f7-5755ef146c94"
-        ],
-        "isRemovable": false,
-        "filePath": "test"
-      },
-      "ce2930f8-cceb-41a8-ab76-361e19c4e2ad": {
-        "id": "ce2930f8-cceb-41a8-ab76-361e19c4e2ad",
-        "parent": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
-        "name": "lambda.js",
-        "type": "JS_LAMBDA",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": true,
-        "filePath": "test/lambda.js",
-        "config": {
-          "runtime": "nodejs10.x",
-          "handler": "handler",
-          "timeout": 60,
-          "memory": 128,
-          "layers": []
-        },
-        "triggers": [],
-        "testCases": {
-          "a040fdbd-4e0c-437c-b4cc-f11a3765d2d0": {
-            "id": "a040fdbd-4e0c-437c-b4cc-f11a3765d2d0",
-            "name": "Test event",
-            "functionId": "ce2930f8-cceb-41a8-ab76-361e19c4e2ad",
-            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
-            "eventTemplate": "hello-world"
-          }
-        }
-      },
-      "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879": {
-        "id": "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879",
-        "parent": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
-        "name": "fd.py",
+        "name": "dsfs.py",
         "type": "PYTHON_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test/fd.py",
+        "filePath": "dsfs.py",
+        "cursor": {
+          "lineNumber": 15,
+          "column": 20
+        },
         "config": {
           "runtime": "python2.7",
           "handler": "handler",
@@ -58,42 +21,126 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": []
-      },
-      "b1f2c104-8670-4800-88f7-5755ef146c94": {
-        "id": "b1f2c104-8670-4800-88f7-5755ef146c94",
-        "parent": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
-        "name": "__init__.py",
-        "type": "PYTHON_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": true,
-        "filePath": "test/__init__.py"
+        "triggers": [
+          {
+            "resourceName": "apigusEast1TestAPIMyLambdapost",
+            "config": {}
+          }
+        ],
+        "testCases": {
+          "e75a9266-da69-4cfb-9f1b-015b2002e1a8": {
+            "id": "e75a9266-da69-4cfb-9f1b-015b2002e1a8",
+            "name": "Test event",
+            "functionId": "6f9de244-7f1f-4feb-a8db-55e85f66f33e",
+            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "eventTemplate": "hello-world"
+          }
+        }
       }
     },
-    "rootNode": "b23dd896-bf24-4bf2-8771-d70d1bdcb147",
     "openFiles": [
-      "ce2930f8-cceb-41a8-ab76-361e19c4e2ad",
-      "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879"
+      "6f9de244-7f1f-4feb-a8db-55e85f66f33e"
     ],
-    "currentFileId": "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879",
+    "currentFileId": "6f9de244-7f1f-4feb-a8db-55e85f66f33e",
     "resources": {
-      "ses-kumudika@adroitlogic.com": {
-        "name": "ses-kumudika@adroitlogic.com",
-        "type": "SES",
+      "apigusEast1TestAPIMyLambdaput": {
+        "name": "apigusEast1TestAPIMyLambdaput",
+        "type": "API_GATEWAY",
         "config": {
-          "selectedIdentity": "kumudika@adroitlogic.com",
-          "projectRegion": "us-east-1",
-          "params": {
-            "to": "hirudinee@adroitlogic.com",
-            "cc": "",
-            "bcc": "",
-            "subject": "test",
-            "body": {
-              "text": "",
-              "html": ""
-            }
-          }
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "TestAPI",
+          "apiId": "0itznun7w3",
+          "endpointType": "EDGE",
+          "rootResourceId": "h2lelj6j7k",
+          "existingResources": {
+            "/MyLambda": "98nqbj",
+            "/testdbput": "bu1jy0",
+            "/": "h2lelj6j7k",
+            "/newchange/test": "k6pdhn",
+            "/newchange": "q1ox7l",
+            "/testWithSlash": "q4m4g1",
+            "/testtwospeciallambda": "q4szm3",
+            "/testtwospecialkumutest": "wey3lk"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/MyLambda",
+          "resourceName": "MyLambda",
+          "resourceId": "98nqbj",
+          "restMethod": "PUT",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "prod",
+          "stageDeploymentId": "u3behr",
+          "mode": 1
+        }
+      },
+      "apigusEast1TestAPIMyLambdapost": {
+        "name": "apigusEast1TestAPIMyLambdapost",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "TestAPI",
+          "apiId": "0itznun7w3",
+          "endpointType": "EDGE",
+          "rootResourceId": "h2lelj6j7k",
+          "existingResources": {
+            "/MyLambda": "98nqbj",
+            "/testdbput": "bu1jy0",
+            "/": "h2lelj6j7k",
+            "/newchange/test": "k6pdhn",
+            "/newchange": "q1ox7l",
+            "/testWithSlash": "q4m4g1",
+            "/testtwospeciallambda": "q4szm3",
+            "/testtwospecialkumutest": "wey3lk"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/MyLambda",
+          "resourceName": "MyLambda",
+          "resourceId": "98nqbj",
+          "restMethod": "POST",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "prod",
+          "stageDeploymentId": "u3behr",
+          "mode": 1
+        }
+      },
+      "ddbtesthistory": {
+        "name": "ddbtesthistory",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "operation": "get",
+          "table": {
+            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/testhistory",
+            "name": "testhistory",
+            "partitionKey": "Name",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "payPerRequest": true,
+            "mode": 1,
+            "streamArn": "arn:aws:dynamodb:us-east-1:318300609668:table/testhistory/stream/2020-03-08T17:34:03.822"
+          },
+          "isGlobalEditMode": false,
+          "parameters": {
+            "Key": {
+              "Name": "K"
+            },
+            "Item": {},
+            "ExpressionAttributeValues": {}
+          },
+          "triggerParams": {},
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          },
+          "valid": true
         }
       }
     },
@@ -109,14 +156,6 @@
         "shouldPersist": false,
         "displayOnly": false,
         "editable": false
-      },
-      {
-        "lambdaId": "f3eb5254-5229-48a3-b8f5-c7b7e2c6e879",
-        "varKey": "PYTHONPATH",
-        "varValue": "/var/runtime:/var/task/test",
-        "shouldPersist": true,
-        "displayOnly": false,
-        "editable": true
       }
     ],
     "packageJSON": {
@@ -132,13 +171,14 @@
     }
   },
   "PROJECT_META": {
-    "projectName": "test",
+    "projectName": "dsfs",
     "projectDescription": "",
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
+    "language": "python",
     "platformRegions": {},
-    "lastSave": 1583215303178
+    "lastSave": 1584081557747
   },
   "VCS_STATE": {
     "provider": "GitHub",
