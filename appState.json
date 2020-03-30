@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "test.js",
         "cursor": {
-          "lineNumber": 14,
-          "column": 31
+          "lineNumber": 20,
+          "column": 40
         },
         "config": {
           "runtime": "nodejs8",
@@ -133,7 +133,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1585568761454
+    "lastSave": 1585569178212
   },
   "VCS_STATE": {
     "provider": "GitHub",

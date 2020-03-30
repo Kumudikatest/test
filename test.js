@@ -14,8 +14,8 @@ exports.handler = function (request, response) {
             console.loh(data);
         })
         .catch(err => {
-            // error handling goes here
+            console.log(err);
         });
 
-    response.send({ "message": "Successfully executed" });
+    response.send({ "message": "Success" });
 }
