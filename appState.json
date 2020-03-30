@@ -63,9 +63,25 @@
       "dialect": null,
       "definitions": null
     },
-    "envVariables": [],
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "AWS_REGION",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
     "packageJSON": {
-      "dependencies": {}
+      "dependencies": {
+        "mysql": {
+          "name": "mysql",
+          "version": "2.18.1",
+          "dev": false,
+          "language": "nodejs"
+        }
+      }
     }
   },
   "PROJECT_META": {
@@ -75,8 +91,10 @@
     "projectRegion": "us-east1",
     "platform": "GCP",
     "language": "nodejs",
-    "platformRegions": {},
-    "lastSave": 1585564573760
+    "platformRegions": {
+      "AWS": "us-east-1"
+    },
+    "lastSave": 1585565307652
   },
   "VCS_STATE": {
     "provider": "GitHub",
