@@ -17,5 +17,5 @@ exports.handler = function (request, response) {
             console.log(err);
         });
 
-    response.send({ "message": "Success" });
+    response.send({ "message": "Succ" });
 }

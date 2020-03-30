@@ -12,7 +12,7 @@
         "filePath": "test.js",
         "cursor": {
           "lineNumber": 20,
-          "column": 40
+          "column": 37
         },
         "config": {
           "runtime": "nodejs8",
@@ -133,7 +133,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1585569178212
+    "lastSave": 1585569526281
   },
   "VCS_STATE": {
     "provider": "GitHub",
