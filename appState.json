@@ -1,184 +1,82 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "6f9de244-7f1f-4feb-a8db-55e85f66f33e": {
-        "id": "6f9de244-7f1f-4feb-a8db-55e85f66f33e",
+      "dd64a79f-381d-483a-8c7f-3423517c5138": {
+        "id": "dd64a79f-381d-483a-8c7f-3423517c5138",
         "parent": null,
-        "name": "dsfs.py",
-        "type": "PYTHON_LAMBDA",
+        "name": "test.js",
+        "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "dsfs.py",
+        "filePath": "test.js",
         "cursor": {
-          "lineNumber": 15,
-          "column": 20
+          "lineNumber": 2,
+          "column": 5
         },
         "config": {
-          "runtime": "python2.7",
-          "handler": "handler",
+          "runtime": "nodejs8",
           "timeout": 60,
           "memory": 128,
-          "layers": []
+          "triggerType": 0
         },
         "triggers": [
           {
-            "resourceName": "apigusEast1TestAPIMyLambdapost",
+            "resourceName": "http-trigger",
             "config": {}
           }
-        ],
-        "testCases": {
-          "e75a9266-da69-4cfb-9f1b-015b2002e1a8": {
-            "id": "e75a9266-da69-4cfb-9f1b-015b2002e1a8",
-            "name": "Test event",
-            "functionId": "6f9de244-7f1f-4feb-a8db-55e85f66f33e",
-            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
-            "eventTemplate": "hello-world"
-          }
-        }
+        ]
+      },
+      "99837a84-601a-46dd-b4bb-6719ee0df70c": {
+        "id": "99837a84-601a-46dd-b4bb-6719ee0df70c",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js"
+      },
+      "1a865d1a-b356-4f67-bba2-f3d039011031": {
+        "id": "1a865d1a-b356-4f67-bba2-f3d039011031",
+        "parent": null,
+        "name": "main.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "main.py"
       }
     },
     "openFiles": [
-      "6f9de244-7f1f-4feb-a8db-55e85f66f33e"
+      "dd64a79f-381d-483a-8c7f-3423517c5138"
     ],
-    "currentFileId": "6f9de244-7f1f-4feb-a8db-55e85f66f33e",
+    "currentFileId": "dd64a79f-381d-483a-8c7f-3423517c5138",
     "resources": {
-      "apigusEast1TestAPIMyLambdaput": {
-        "name": "apigusEast1TestAPIMyLambdaput",
-        "type": "API_GATEWAY",
-        "config": {
-          "selectedRegion": "us-east-1",
-          "apiMode": 1,
-          "apiName": "TestAPI",
-          "apiId": "0itznun7w3",
-          "endpointType": "EDGE",
-          "rootResourceId": "h2lelj6j7k",
-          "existingResources": {
-            "/MyLambda": "98nqbj",
-            "/testdbput": "bu1jy0",
-            "/": "h2lelj6j7k",
-            "/newchange/test": "k6pdhn",
-            "/newchange": "q1ox7l",
-            "/testWithSlash": "q4m4g1",
-            "/testtwospeciallambda": "q4szm3",
-            "/testtwospecialkumutest": "wey3lk"
-          },
-          "resourceMode": 1,
-          "resourcePath": "/MyLambda",
-          "resourceName": "MyLambda",
-          "resourceId": "98nqbj",
-          "restMethod": "PUT",
-          "proxyIntegration": false,
-          "enableCORS": false,
-          "stageMode": 1,
-          "stageName": "prod",
-          "stageDeploymentId": "u3behr",
-          "mode": 1
-        }
-      },
-      "apigusEast1TestAPIMyLambdapost": {
-        "name": "apigusEast1TestAPIMyLambdapost",
-        "type": "API_GATEWAY",
-        "config": {
-          "selectedRegion": "us-east-1",
-          "apiMode": 1,
-          "apiName": "TestAPI",
-          "apiId": "0itznun7w3",
-          "endpointType": "EDGE",
-          "rootResourceId": "h2lelj6j7k",
-          "existingResources": {
-            "/MyLambda": "98nqbj",
-            "/testdbput": "bu1jy0",
-            "/": "h2lelj6j7k",
-            "/newchange/test": "k6pdhn",
-            "/newchange": "q1ox7l",
-            "/testWithSlash": "q4m4g1",
-            "/testtwospeciallambda": "q4szm3",
-            "/testtwospecialkumutest": "wey3lk"
-          },
-          "resourceMode": 1,
-          "resourcePath": "/MyLambda",
-          "resourceName": "MyLambda",
-          "resourceId": "98nqbj",
-          "restMethod": "POST",
-          "proxyIntegration": false,
-          "enableCORS": false,
-          "stageMode": 1,
-          "stageName": "prod",
-          "stageDeploymentId": "u3behr",
-          "mode": 1
-        }
-      },
-      "ddbtesthistory": {
-        "name": "ddbtesthistory",
-        "type": "DynamoDB",
-        "config": {
-          "mode": 1,
-          "operation": "get",
-          "table": {
-            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/testhistory",
-            "name": "testhistory",
-            "partitionKey": "Name",
-            "partitionKeyType": "S",
-            "hasSortKey": false,
-            "sortKey": "",
-            "sortKeyType": "S",
-            "payPerRequest": true,
-            "mode": 1,
-            "streamArn": "arn:aws:dynamodb:us-east-1:318300609668:table/testhistory/stream/2020-03-08T17:34:03.822"
-          },
-          "isGlobalEditMode": false,
-          "parameters": {
-            "Key": {
-              "Name": "K"
-            },
-            "Item": {},
-            "ExpressionAttributeValues": {}
-          },
-          "triggerParams": {},
-          "validator": {
-            "validatableFields": {},
-            "validity": true
-          },
-          "valid": true
-        }
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {}
       }
     },
     "customTemplate": {
       "dialect": null,
       "definitions": null
     },
-    "envVariables": [
-      {
-        "lambdaId": "all",
-        "varKey": "SIGMA_AWS_ACC_ID",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      }
-    ],
+    "envVariables": [],
     "packageJSON": {
-      "dependencies": {
-        "boto3": {
-          "name": "boto3",
-          "language": "python",
-          "version": "1.9.6",
-          "dev": true,
-          "notRemovable": false
-        }
-      }
+      "dependencies": {}
     }
   },
   "PROJECT_META": {
-    "projectName": "dsfs",
+    "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east-1",
-    "platform": "AWS",
-    "language": "python",
+    "projectRegion": "us-east1",
+    "platform": "GCP",
+    "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1584081557747
+    "lastSave": 1585564573760
   },
   "VCS_STATE": {
     "provider": "GitHub",
