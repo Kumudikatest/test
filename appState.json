@@ -11,14 +11,15 @@
         "isRemovable": true,
         "filePath": "test.js",
         "cursor": {
-          "lineNumber": 2,
-          "column": 5
+          "lineNumber": 14,
+          "column": 31
         },
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
           "memory": 128,
-          "triggerType": 0
+          "triggerType": 0,
+          "handler": "handler"
         },
         "triggers": [
           {
@@ -57,6 +58,13 @@
         "name": "http-trigger",
         "type": "http-trigger",
         "config": {}
+      },
+      "ebResource": {
+        "name": "ebResource",
+        "type": "EventBridge",
+        "config": {
+          "selectedRegion": "us-east-1"
+        }
       }
     },
     "customTemplate": {
@@ -71,6 +79,30 @@
         "shouldPersist": false,
         "displayOnly": false,
         "editable": false
+      },
+      {
+        "lambdaId": "all",
+        "varKey": "AWS_ACCESS_KEY_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      },
+      {
+        "lambdaId": "all",
+        "varKey": "AWS_SECRET_ACCESS_KEY",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      },
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
       }
     ],
     "packageJSON": {
@@ -80,6 +112,13 @@
           "version": "2.18.1",
           "dev": false,
           "language": "nodejs"
+        },
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "nodejs",
+          "version": "2.644.0",
+          "dev": false,
+          "notRemovable": false
         }
       }
     }
@@ -94,7 +133,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1585565307652
+    "lastSave": 1585568761454
   },
   "VCS_STATE": {
     "provider": "GitHub",
