@@ -1,8 +1,8 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "5fe171f4-8aea-4a27-bd79-4f6214bcd515": {
-        "id": "5fe171f4-8aea-4a27-bd79-4f6214bcd515",
+      "d49885a4-f526-49fb-9d5a-16fd545d7a6d": {
+        "id": "d49885a4-f526-49fb-9d5a-16fd545d7a6d",
         "parent": null,
         "name": "test.js",
         "type": "JS_LAMBDA",
@@ -21,13 +21,22 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": []
+        "triggers": [],
+        "testCases": {
+          "b70887e9-98a9-4f1f-8452-94abd5a04993": {
+            "id": "b70887e9-98a9-4f1f-8452-94abd5a04993",
+            "name": "Test event",
+            "functionId": "d49885a4-f526-49fb-9d5a-16fd545d7a6d",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          }
+        }
       }
     },
     "openFiles": [
-      "5fe171f4-8aea-4a27-bd79-4f6214bcd515"
+      "d49885a4-f526-49fb-9d5a-16fd545d7a6d"
     ],
-    "currentFileId": "5fe171f4-8aea-4a27-bd79-4f6214bcd515",
+    "currentFileId": "d49885a4-f526-49fb-9d5a-16fd545d7a6d",
     "resources": {},
     "customTemplate": {
       "dialect": null,
@@ -55,7 +64,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585660325029
+    "lastSave": 1585660901909
   },
   "VCS_STATE": {
     "provider": "GitHub",
