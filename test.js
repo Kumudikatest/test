@@ -1,21 +1,19 @@
 let AWS = require('aws-sdk');
-const eventBridge = new AWS.EventBridge();
+const cognito_idp = new AWS.CognitoIdentityServiceProvider();
+var common = require('./common');
 
-exports.handler = function (request, response) {
-    eventBridge.putEvents({
-        Entries: [{
-            EventBusName: "my-event-bus-udith",
-            Source: "bv",
-            DetailType: " nvn",
-            Detail: "{}"
-        }]
-    }).promise()
-        .then(data => {
-            console.loh(data);
-        })
-        .catch(err => {
-            console.log(err);
-        });
+exports.handler = async (event) => {
+    //common.func1();
+    console.log(common);
+    try {
+        let data = await cognito_idp.listUsers({
+            UserPoolId: process.env.UserPoolId_cognitol,
+            Limit: 10
+        }).promise();
 
-    response.send({ "message": "Succ" });
-}
+    } catch (err) {
+        // error handling goes here
+    };
+
+    return { "message": "Successfully executed" };
+};
