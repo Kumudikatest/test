@@ -1,8 +1,8 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "77997b9e-7a3b-414d-bc9a-26e9863cb66c": {
-        "id": "77997b9e-7a3b-414d-bc9a-26e9863cb66c",
+      "d4f0a1ab-4fca-4caf-a2ce-3f2a33498851": {
+        "id": "d4f0a1ab-4fca-4caf-a2ce-3f2a33498851",
         "parent": null,
         "name": "test.js",
         "type": "JS_LAMBDA",
@@ -25,9 +25,9 @@
       }
     },
     "openFiles": [
-      "77997b9e-7a3b-414d-bc9a-26e9863cb66c"
+      "d4f0a1ab-4fca-4caf-a2ce-3f2a33498851"
     ],
-    "currentFileId": "77997b9e-7a3b-414d-bc9a-26e9863cb66c",
+    "currentFileId": "d4f0a1ab-4fca-4caf-a2ce-3f2a33498851",
     "resources": {},
     "customTemplate": {
       "dialect": null,
@@ -55,7 +55,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585661082821
+    "lastSave": 1585721252707
   },
   "VCS_STATE": {
     "provider": "GitHub",
