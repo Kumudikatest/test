@@ -1,8 +1,8 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "d4f0a1ab-4fca-4caf-a2ce-3f2a33498851": {
-        "id": "d4f0a1ab-4fca-4caf-a2ce-3f2a33498851",
+      "d279d965-8f0a-4933-9387-1413fa44085c": {
+        "id": "d279d965-8f0a-4933-9387-1413fa44085c",
         "parent": null,
         "name": "test.js",
         "type": "JS_LAMBDA",
@@ -19,17 +19,44 @@
           "handler": "handler",
           "timeout": 60,
           "memory": 128,
-          "layers": []
+          "layers": [],
+          "name": "test"
+        },
+        "triggers": []
+      },
+      "a0368a22-dfd8-495f-b58e-81f47a32ecc1": {
+        "id": "a0368a22-dfd8-495f-b58e-81f47a32ecc1",
+        "parent": null,
+        "name": "la.py",
+        "type": "PYTHON_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "la.py",
+        "cursor": {
+          "lineNumber": 2,
+          "column": 5
+        },
+        "config": {
+          "runtime": "python3.8",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": [],
+          "name": "new",
+          "description": "description of new lambda"
         },
         "triggers": []
       }
     },
     "openFiles": [
-      "d4f0a1ab-4fca-4caf-a2ce-3f2a33498851"
+      "d279d965-8f0a-4933-9387-1413fa44085c",
+      "a0368a22-dfd8-495f-b58e-81f47a32ecc1"
     ],
-    "currentFileId": "d4f0a1ab-4fca-4caf-a2ce-3f2a33498851",
+    "currentFileId": "a0368a22-dfd8-495f-b58e-81f47a32ecc1",
     "resources": {},
     "customTemplate": {
+      "overrideDefault": false,
       "dialect": null,
       "definitions": null
     },
@@ -55,7 +82,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585721252707
+    "lastSave": 1585803434172
   },
   "VCS_STATE": {
     "provider": "GitHub",
