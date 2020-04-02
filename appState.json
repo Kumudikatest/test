@@ -52,12 +52,12 @@
       "8bf38764-756f-48f1-9255-69aaa6f63000": {
         "id": "8bf38764-756f-48f1-9255-69aaa6f63000",
         "parent": null,
-        "name": "firstname.js",
+        "name": "firstname1.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "firstname.js",
+        "filePath": "firstname1.js",
         "cursor": {
           "lineNumber": 2,
           "column": 5
@@ -67,7 +67,7 @@
           "timeout": 60,
           "memory": 128,
           "triggerType": 0,
-          "name": "firstname"
+          "name": "updatefuncname"
         },
         "triggers": [
           {
@@ -107,7 +107,7 @@
     "platform": "GCP",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1585829166973
+    "lastSave": 1585829481715
   },
   "VCS_STATE": {
     "provider": "GitHub",
