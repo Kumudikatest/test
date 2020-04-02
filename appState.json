@@ -4,12 +4,12 @@
       "722190f0-3f93-4437-8496-55316c02653c": {
         "id": "722190f0-3f93-4437-8496-55316c02653c",
         "parent": null,
-        "name": "test.py",
+        "name": "updatefilenametest.py",
         "type": "PYTHON_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test.py",
+        "filePath": "updatefilenametest.py",
         "cursor": {
           "lineNumber": 2,
           "column": 5
@@ -78,7 +78,7 @@
     "platform": "GCP",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1585810028304
+    "lastSave": 1585810264480
   },
   "VCS_STATE": {
     "provider": "GitHub",
