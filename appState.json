@@ -1,131 +1,84 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "2705d9cd-f9a1-44d0-8824-17d19fb0f515": {
-        "id": "2705d9cd-f9a1-44d0-8824-17d19fb0f515",
+      "1473ed0c-5bec-44b2-9672-a37b2bb15581": {
+        "id": "1473ed0c-5bec-44b2-9672-a37b2bb15581",
         "parent": null,
-        "name": "test.js",
-        "type": "JS_LAMBDA",
+        "name": "test.py",
+        "type": "PYTHON_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test.js",
+        "filePath": "test.py",
         "cursor": {
           "lineNumber": 9,
-          "column": 23
+          "column": 20
         },
         "config": {
-          "runtime": "nodejs10.x",
-          "handler": "handler",
+          "runtime": "python37",
           "timeout": 60,
           "memory": 128,
-          "layers": [],
-          "name": "test"
+          "triggerType": 0,
+          "name": "test",
+          "handler": "handler"
         },
         "triggers": [
           {
-            "resourceName": "apigusEast1TestAPItestdbputput",
+            "resourceName": "http-trigger",
             "config": {}
           }
         ],
         "testCases": {
-          "d9912e36-e654-4f36-b650-e38080f39fd6": {
-            "id": "d9912e36-e654-4f36-b650-e38080f39fd6",
+          "4ae9048d-cc0f-465f-86cc-7fac2d12fb58": {
+            "id": "4ae9048d-cc0f-465f-86cc-7fac2d12fb58",
             "name": "Test event",
-            "functionId": "2705d9cd-f9a1-44d0-8824-17d19fb0f515",
+            "functionId": "1473ed0c-5bec-44b2-9672-a37b2bb15581",
             "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
             "eventTemplate": "hello-world"
           }
         }
       },
-      "a05a01c3-687c-4a3a-95e4-f52e7c799014": {
-        "id": "a05a01c3-687c-4a3a-95e4-f52e7c799014",
+      "afafaa40-a5a0-4020-87ac-f00e92f3179d": {
+        "id": "afafaa40-a5a0-4020-87ac-f00e92f3179d",
         "parent": null,
-        "name": "py.py",
-        "type": "PYTHON_LAMBDA",
+        "name": "index.js",
+        "type": "JS_FILE",
         "isDirectory": false,
         "children": [],
-        "isRemovable": true,
-        "filePath": "py.py",
-        "cursor": {
-          "lineNumber": 11,
-          "column": 20
-        },
-        "config": {
-          "runtime": "python3.8",
-          "handler": "handler",
-          "timeout": 60,
-          "memory": 128,
-          "layers": [],
-          "name": "py"
-        },
-        "triggers": [],
-        "testCases": {
-          "3b4ab2a6-0e0f-4b30-aa5b-a465e1ae08b1": {
-            "id": "3b4ab2a6-0e0f-4b30-aa5b-a465e1ae08b1",
-            "name": "Test event",
-            "functionId": "a05a01c3-687c-4a3a-95e4-f52e7c799014",
-            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
-            "eventTemplate": "hello-world"
-          }
-        }
+        "isRemovable": false,
+        "filePath": "index.js"
+      },
+      "89b04a49-c8c8-4a4f-a198-6001e07e2a8d": {
+        "id": "89b04a49-c8c8-4a4f-a198-6001e07e2a8d",
+        "parent": null,
+        "name": "main.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "main.py"
       }
     },
     "openFiles": [
-      "2705d9cd-f9a1-44d0-8824-17d19fb0f515",
-      "a05a01c3-687c-4a3a-95e4-f52e7c799014"
+      "1473ed0c-5bec-44b2-9672-a37b2bb15581"
     ],
-    "currentFileId": "a05a01c3-687c-4a3a-95e4-f52e7c799014",
+    "currentFileId": "1473ed0c-5bec-44b2-9672-a37b2bb15581",
     "resources": {
-      "apigusEast1TestAPItestdbputput": {
-        "name": "apigusEast1TestAPItestdbputput",
-        "type": "API_GATEWAY",
-        "config": {
-          "selectedRegion": "us-east-1",
-          "apiMode": 1,
-          "apiName": "TestAPI",
-          "apiId": "0itznun7w3",
-          "endpointType": "EDGE",
-          "rootResourceId": "h2lelj6j7k",
-          "existingResources": {
-            "/MyLambda": "98nqbj",
-            "/testdbput": "bu1jy0",
-            "/": "h2lelj6j7k",
-            "/newchange/test": "k6pdhn",
-            "/newchange": "q1ox7l",
-            "/testWithSlash": "q4m4g1",
-            "/testtwospeciallambda": "q4szm3",
-            "/testtwospecialkumutest": "wey3lk"
-          },
-          "resourceMode": 1,
-          "resourcePath": "/testdbput",
-          "resourceName": "testdbput",
-          "resourceId": "bu1jy0",
-          "restMethod": "PUT",
-          "proxyIntegration": false,
-          "enableCORS": false,
-          "stageMode": 1,
-          "stageName": "test",
-          "stageDeploymentId": "ufp3po",
-          "mode": 1
-        }
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {}
       },
       "snsusEast1New": {
         "name": "snsusEast1New",
         "type": "SNS",
         "config": {
-          "topicMode": 0,
+          "topicMode": 1,
           "topicName": "New",
           "topicArn": "arn:aws:sns:us-east-1:318300609668:New",
           "topicRegion": "us-east-1",
           "snsType": 0,
-          "topicDisplayName": "",
-          "subscriptions": [
-            {
-              "type": "email",
-              "endpoint": "kumudika@adroitlogic.com"
-            }
-          ]
+          "subscriptions": []
         }
       }
     },
@@ -137,6 +90,30 @@
     "envVariables": [
       {
         "lambdaId": "all",
+        "varKey": "AWS_REGION",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      },
+      {
+        "lambdaId": "all",
+        "varKey": "AWS_ACCESS_KEY_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      },
+      {
+        "lambdaId": "all",
+        "varKey": "AWS_SECRET_ACCESS_KEY",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      },
+      {
+        "lambdaId": "all",
         "varKey": "SIGMA_AWS_ACC_ID",
         "varValue": null,
         "shouldPersist": false,
@@ -146,18 +123,11 @@
     ],
     "packageJSON": {
       "dependencies": {
-        "aws-sdk": {
-          "name": "aws-sdk",
-          "language": "nodejs",
-          "version": "2.644.0",
-          "dev": true,
-          "notRemovable": false
-        },
         "boto3": {
           "name": "boto3",
           "language": "python",
           "version": "1.12.27",
-          "dev": true,
+          "dev": false,
           "notRemovable": false
         }
       }
@@ -167,11 +137,13 @@
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east-1",
-    "platform": "AWS",
-    "language": "nodejs",
-    "platformRegions": {},
-    "lastSave": 1585831386687
+    "projectRegion": "us-east1",
+    "platform": "GCP",
+    "language": "python",
+    "platformRegions": {
+      "AWS": "us-east-1"
+    },
+    "lastSave": 1585831662884
   },
   "VCS_STATE": {
     "provider": "GitHub",
