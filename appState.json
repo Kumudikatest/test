@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "test.js",
         "cursor": {
-          "lineNumber": 13,
-          "column": 27
+          "lineNumber": 1,
+          "column": 1
         },
         "config": {
           "runtime": "nodejs10.x",
@@ -44,23 +44,6 @@
     ],
     "currentFileId": "2705d9cd-f9a1-44d0-8824-17d19fb0f515",
     "resources": {
-      "snsusEast1TestSNS": {
-        "name": "snsusEast1TestSNS",
-        "type": "SNS",
-        "config": {
-          "topicMode": 1,
-          "topicName": "TestSNS",
-          "topicArn": "arn:aws:sns:us-east-1:318300609668:TestSNS",
-          "topicRegion": "us-east-1",
-          "snsType": 0,
-          "subscriptions": [
-            {
-              "type": "sms",
-              "endpoint": "+94772445224"
-            }
-          ]
-        }
-      },
       "apigusEast1TestAPItestdbputput": {
         "name": "apigusEast1TestAPItestdbputput",
         "type": "API_GATEWAY",
@@ -130,7 +113,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585829997871
+    "lastSave": 1585830853421
   },
   "VCS_STATE": {
     "provider": "GitHub",
