@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "test.js",
         "cursor": {
-          "lineNumber": 1,
-          "column": 1
+          "lineNumber": 9,
+          "column": 23
         },
         "config": {
           "runtime": "nodejs10.x",
@@ -76,6 +76,24 @@
           "stageDeploymentId": "ufp3po",
           "mode": 1
         }
+      },
+      "snsusEast1New": {
+        "name": "snsusEast1New",
+        "type": "SNS",
+        "config": {
+          "topicMode": 0,
+          "topicName": "New",
+          "topicArn": "arn:aws:sns:us-east-1:318300609668:New",
+          "topicRegion": "us-east-1",
+          "snsType": 0,
+          "topicDisplayName": "Newdisplayname",
+          "subscriptions": [
+            {
+              "type": "email",
+              "endpoint": "kumudika@adroitlogic.com"
+            }
+          ]
+        }
       }
     },
     "customTemplate": {
@@ -113,7 +131,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585830853421
+    "lastSave": 1585831089271
   },
   "VCS_STATE": {
     "provider": "GitHub",
