@@ -19,7 +19,8 @@
           "timeout": 60,
           "memory": 128,
           "triggerType": 0,
-          "name": "updatefuncname"
+          "name": "updatefuncname",
+          "handler": "handler"
         },
         "triggers": [
           {
@@ -47,12 +48,40 @@
         "children": [],
         "isRemovable": false,
         "filePath": "main.py"
+      },
+      "8bf38764-756f-48f1-9255-69aaa6f63000": {
+        "id": "8bf38764-756f-48f1-9255-69aaa6f63000",
+        "parent": null,
+        "name": "firstname.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "firstname.js",
+        "cursor": {
+          "lineNumber": 2,
+          "column": 5
+        },
+        "config": {
+          "runtime": "nodejs8",
+          "timeout": 60,
+          "memory": 128,
+          "triggerType": 0,
+          "name": "firstname"
+        },
+        "triggers": [
+          {
+            "resourceName": "http-trigger",
+            "config": {}
+          }
+        ]
       }
     },
     "openFiles": [
-      "722190f0-3f93-4437-8496-55316c02653c"
+      "722190f0-3f93-4437-8496-55316c02653c",
+      "8bf38764-756f-48f1-9255-69aaa6f63000"
     ],
-    "currentFileId": "722190f0-3f93-4437-8496-55316c02653c",
+    "currentFileId": "8bf38764-756f-48f1-9255-69aaa6f63000",
     "resources": {
       "http-trigger": {
         "name": "http-trigger",
@@ -78,7 +107,7 @@
     "platform": "GCP",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1585810264480
+    "lastSave": 1585829166973
   },
   "VCS_STATE": {
     "provider": "GitHub",
