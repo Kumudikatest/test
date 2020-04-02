@@ -1,8 +1,8 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "1473ed0c-5bec-44b2-9672-a37b2bb15581": {
-        "id": "1473ed0c-5bec-44b2-9672-a37b2bb15581",
+      "ecd05753-7b4b-4635-99d2-0202a78259fe": {
+        "id": "ecd05753-7b4b-4635-99d2-0202a78259fe",
         "parent": null,
         "name": "test.py",
         "type": "PYTHON_LAMBDA",
@@ -11,64 +11,34 @@
         "isRemovable": true,
         "filePath": "test.py",
         "cursor": {
-          "lineNumber": 9,
-          "column": 20
+          "lineNumber": 11,
+          "column": 17
         },
         "config": {
-          "runtime": "python37",
+          "runtime": "python3.8",
+          "handler": "handler",
           "timeout": 60,
           "memory": 128,
-          "triggerType": 0,
-          "name": "test",
-          "handler": "handler"
+          "layers": [],
+          "name": "test"
         },
-        "triggers": [
-          {
-            "resourceName": "http-trigger",
-            "config": {}
-          }
-        ],
+        "triggers": [],
         "testCases": {
-          "4ae9048d-cc0f-465f-86cc-7fac2d12fb58": {
-            "id": "4ae9048d-cc0f-465f-86cc-7fac2d12fb58",
+          "c2fe4139-e40f-425a-94f9-11cd93bd1605": {
+            "id": "c2fe4139-e40f-425a-94f9-11cd93bd1605",
             "name": "Test event",
-            "functionId": "1473ed0c-5bec-44b2-9672-a37b2bb15581",
+            "functionId": "ecd05753-7b4b-4635-99d2-0202a78259fe",
             "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
             "eventTemplate": "hello-world"
           }
         }
-      },
-      "afafaa40-a5a0-4020-87ac-f00e92f3179d": {
-        "id": "afafaa40-a5a0-4020-87ac-f00e92f3179d",
-        "parent": null,
-        "name": "index.js",
-        "type": "JS_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "index.js"
-      },
-      "89b04a49-c8c8-4a4f-a198-6001e07e2a8d": {
-        "id": "89b04a49-c8c8-4a4f-a198-6001e07e2a8d",
-        "parent": null,
-        "name": "main.py",
-        "type": "PYTHON_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "main.py"
       }
     },
     "openFiles": [
-      "1473ed0c-5bec-44b2-9672-a37b2bb15581"
+      "ecd05753-7b4b-4635-99d2-0202a78259fe"
     ],
-    "currentFileId": "1473ed0c-5bec-44b2-9672-a37b2bb15581",
+    "currentFileId": "ecd05753-7b4b-4635-99d2-0202a78259fe",
     "resources": {
-      "http-trigger": {
-        "name": "http-trigger",
-        "type": "http-trigger",
-        "config": {}
-      },
       "snsusEast1New": {
         "name": "snsusEast1New",
         "type": "SNS",
@@ -90,30 +60,6 @@
     "envVariables": [
       {
         "lambdaId": "all",
-        "varKey": "AWS_REGION",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      },
-      {
-        "lambdaId": "all",
-        "varKey": "AWS_ACCESS_KEY_ID",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      },
-      {
-        "lambdaId": "all",
-        "varKey": "AWS_SECRET_ACCESS_KEY",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      },
-      {
-        "lambdaId": "all",
         "varKey": "SIGMA_AWS_ACC_ID",
         "varValue": null,
         "shouldPersist": false,
@@ -127,7 +73,7 @@
           "name": "boto3",
           "language": "python",
           "version": "1.12.27",
-          "dev": false,
+          "dev": true,
           "notRemovable": false
         }
       }
@@ -137,13 +83,11 @@
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east1",
-    "platform": "GCP",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
     "language": "python",
-    "platformRegions": {
-      "AWS": "us-east-1"
-    },
-    "lastSave": 1585831662884
+    "platformRegions": {},
+    "lastSave": 1585832358136
   },
   "VCS_STATE": {
     "provider": "GitHub",

@@ -1,7 +1,7 @@
 import boto3
 sns = boto3.client("sns")
 
-def handler(request):
+def handler(event, context):
     try:
         data = sns.get_topic_attributes(
             TopicArn="arn:aws:sns:us-east-1:318300609668:New"
@@ -11,4 +11,4 @@ def handler(request):
         print(e)
         raise(e)
     
-    return "Successfully executed"
+    return {"message": "Successfully executed"}
