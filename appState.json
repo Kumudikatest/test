@@ -44,16 +44,40 @@
           "memory": 128,
           "layers": [],
           "name": "new",
-          "description": "description of new lambda"
+          "description": "udescription of new lambdapdate "
+        },
+        "triggers": []
+      },
+      "1f9bf0e6-d9b1-4f6b-bb31-79ecbf9715ae": {
+        "id": "1f9bf0e6-d9b1-4f6b-bb31-79ecbf9715ae",
+        "parent": null,
+        "name": "withoutlamname.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "withoutlamname.js",
+        "cursor": {
+          "lineNumber": 2,
+          "column": 5
+        },
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": [],
+          "name": "withoutlamname"
         },
         "triggers": []
       }
     },
     "openFiles": [
       "d279d965-8f0a-4933-9387-1413fa44085c",
-      "a0368a22-dfd8-495f-b58e-81f47a32ecc1"
+      "a0368a22-dfd8-495f-b58e-81f47a32ecc1",
+      "1f9bf0e6-d9b1-4f6b-bb31-79ecbf9715ae"
     ],
-    "currentFileId": "a0368a22-dfd8-495f-b58e-81f47a32ecc1",
+    "currentFileId": "1f9bf0e6-d9b1-4f6b-bb31-79ecbf9715ae",
     "resources": {},
     "customTemplate": {
       "overrideDefault": false,
@@ -82,7 +106,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585803434172
+    "lastSave": 1585803759304
   },
   "VCS_STATE": {
     "provider": "GitHub",
