@@ -33,16 +33,49 @@
             "id": "d9912e36-e654-4f36-b650-e38080f39fd6",
             "name": "Test event",
             "functionId": "2705d9cd-f9a1-44d0-8824-17d19fb0f515",
-            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          }
+        }
+      },
+      "a05a01c3-687c-4a3a-95e4-f52e7c799014": {
+        "id": "a05a01c3-687c-4a3a-95e4-f52e7c799014",
+        "parent": null,
+        "name": "py.py",
+        "type": "PYTHON_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "py.py",
+        "cursor": {
+          "lineNumber": 11,
+          "column": 20
+        },
+        "config": {
+          "runtime": "python3.8",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": [],
+          "name": "py"
+        },
+        "triggers": [],
+        "testCases": {
+          "3b4ab2a6-0e0f-4b30-aa5b-a465e1ae08b1": {
+            "id": "3b4ab2a6-0e0f-4b30-aa5b-a465e1ae08b1",
+            "name": "Test event",
+            "functionId": "a05a01c3-687c-4a3a-95e4-f52e7c799014",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
             "eventTemplate": "hello-world"
           }
         }
       }
     },
     "openFiles": [
-      "2705d9cd-f9a1-44d0-8824-17d19fb0f515"
+      "2705d9cd-f9a1-44d0-8824-17d19fb0f515",
+      "a05a01c3-687c-4a3a-95e4-f52e7c799014"
     ],
-    "currentFileId": "2705d9cd-f9a1-44d0-8824-17d19fb0f515",
+    "currentFileId": "a05a01c3-687c-4a3a-95e4-f52e7c799014",
     "resources": {
       "apigusEast1TestAPItestdbputput": {
         "name": "apigusEast1TestAPItestdbputput",
@@ -86,7 +119,7 @@
           "topicArn": "arn:aws:sns:us-east-1:318300609668:New",
           "topicRegion": "us-east-1",
           "snsType": 0,
-          "topicDisplayName": "Newdisplayname",
+          "topicDisplayName": "",
           "subscriptions": [
             {
               "type": "email",
@@ -119,6 +152,13 @@
           "version": "2.644.0",
           "dev": true,
           "notRemovable": false
+        },
+        "boto3": {
+          "name": "boto3",
+          "language": "python",
+          "version": "1.12.27",
+          "dev": true,
+          "notRemovable": false
         }
       }
     }
@@ -131,7 +171,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585831089271
+    "lastSave": 1585831386687
   },
   "VCS_STATE": {
     "provider": "GitHub",
