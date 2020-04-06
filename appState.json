@@ -1,42 +1,63 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "4b55942b-811a-4aaf-8d6a-640e56fff0d1": {
-        "id": "4b55942b-811a-4aaf-8d6a-640e56fff0d1",
+      "a46b92b7-09b6-4c09-b60e-9411ac91c908": {
+        "id": "a46b92b7-09b6-4c09-b60e-9411ac91c908",
         "parent": null,
-        "name": "test.py",
-        "type": "PYTHON_LAMBDA",
+        "name": "test.js",
+        "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test.py",
+        "filePath": "test.js",
         "cursor": {
-          "lineNumber": 1,
-          "column": 1
+          "lineNumber": 2,
+          "column": 5
         },
         "config": {
-          "runtime": "python3.8",
-          "handler": "handler",
+          "runtime": "nodejs8",
           "timeout": 60,
           "memory": 128,
-          "layers": [],
-          "name": "ln"
+          "triggerType": 0,
+          "name": "funcname"
         },
-        "triggers": []
+        "triggers": [
+          {
+            "resourceName": "http-trigger",
+            "config": {}
+          }
+        ]
+      },
+      "5b8a4cc6-3b22-4350-8fdf-cbc7e5dfef7f": {
+        "id": "5b8a4cc6-3b22-4350-8fdf-cbc7e5dfef7f",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js"
+      },
+      "9bab83a7-a5ad-49fb-bbea-b21add0afd53": {
+        "id": "9bab83a7-a5ad-49fb-bbea-b21add0afd53",
+        "parent": null,
+        "name": "main.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "main.py"
       }
     },
     "openFiles": [
-      "4b55942b-811a-4aaf-8d6a-640e56fff0d1"
+      "a46b92b7-09b6-4c09-b60e-9411ac91c908"
     ],
-    "currentFileId": "4b55942b-811a-4aaf-8d6a-640e56fff0d1",
+    "currentFileId": "a46b92b7-09b6-4c09-b60e-9411ac91c908",
     "resources": {
-      "ses-kumudika@adroitlogic.com": {
-        "name": "ses-kumudika@adroitlogic.com",
-        "type": "SES",
-        "config": {
-          "selectedIdentity": "kumudika@adroitlogic.com",
-          "projectRegion": "us-east-1"
-        }
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {}
       }
     },
     "customTemplate": {
@@ -44,37 +65,20 @@
       "dialect": null,
       "definitions": null
     },
-    "envVariables": [
-      {
-        "lambdaId": "all",
-        "varKey": "SIGMA_AWS_ACC_ID",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      }
-    ],
+    "envVariables": [],
     "packageJSON": {
-      "dependencies": {
-        "boto3": {
-          "name": "boto3",
-          "language": "python",
-          "version": "1.12.27",
-          "dev": true,
-          "notRemovable": false
-        }
-      }
+      "dependencies": {}
     }
   },
   "PROJECT_META": {
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east-1",
-    "platform": "AWS",
-    "language": "python",
+    "projectRegion": "us-east1",
+    "platform": "GCP",
+    "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1586168443258
+    "lastSave": 1586168941648
   },
   "VCS_STATE": {
     "provider": "GitHub",
