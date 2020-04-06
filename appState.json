@@ -1,8 +1,8 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "ecd05753-7b4b-4635-99d2-0202a78259fe": {
-        "id": "ecd05753-7b4b-4635-99d2-0202a78259fe",
+      "4b55942b-811a-4aaf-8d6a-640e56fff0d1": {
+        "id": "4b55942b-811a-4aaf-8d6a-640e56fff0d1",
         "parent": null,
         "name": "test.py",
         "type": "PYTHON_LAMBDA",
@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "test.py",
         "cursor": {
-          "lineNumber": 11,
-          "column": 17
+          "lineNumber": 16,
+          "column": 19
         },
         "config": {
           "runtime": "python3.8",
@@ -22,33 +22,20 @@
           "layers": [],
           "name": "test"
         },
-        "triggers": [],
-        "testCases": {
-          "c2fe4139-e40f-425a-94f9-11cd93bd1605": {
-            "id": "c2fe4139-e40f-425a-94f9-11cd93bd1605",
-            "name": "Test event",
-            "functionId": "ecd05753-7b4b-4635-99d2-0202a78259fe",
-            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
-            "eventTemplate": "hello-world"
-          }
-        }
+        "triggers": []
       }
     },
     "openFiles": [
-      "ecd05753-7b4b-4635-99d2-0202a78259fe"
+      "4b55942b-811a-4aaf-8d6a-640e56fff0d1"
     ],
-    "currentFileId": "ecd05753-7b4b-4635-99d2-0202a78259fe",
+    "currentFileId": "4b55942b-811a-4aaf-8d6a-640e56fff0d1",
     "resources": {
-      "snsusEast1New": {
-        "name": "snsusEast1New",
-        "type": "SNS",
+      "ses-kumudika@adroitlogic.com": {
+        "name": "ses-kumudika@adroitlogic.com",
+        "type": "SES",
         "config": {
-          "topicMode": 1,
-          "topicName": "New",
-          "topicArn": "arn:aws:sns:us-east-1:318300609668:New",
-          "topicRegion": "us-east-1",
-          "snsType": 0,
-          "subscriptions": []
+          "selectedIdentity": "kumudika@adroitlogic.com",
+          "projectRegion": "us-east-1"
         }
       }
     },
@@ -87,7 +74,7 @@
     "platform": "AWS",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1585832358136
+    "lastSave": 1586164741962
   },
   "VCS_STATE": {
     "provider": "GitHub",

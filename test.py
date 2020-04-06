@@ -1,12 +1,26 @@
 import boto3
-sns = boto3.client("sns")
+ses = boto3.client("ses")
 
 def handler(event, context):
     try:
-        data = sns.get_topic_attributes(
-            TopicArn="arn:aws:sns:us-east-1:318300609668:New"
+        data = ses.send_email(
+            Source="kumudika@adroitlogic.com",
+            Destination={
+                'ToAddresses': ["hirudinee@adroitlogic.com"],
+                'CcAddresses': ["hirudinee+aws@adroitlogic.com"],
+                'BccAddresses': ["indunil@adroitlogic.com"]
+            },
+            Message={
+                'Subject': {
+                    'Data': "Please Ignore This Test Message"
+                },
+                'Body': {
+                    'Text': {
+                        'Data': ""
+                    }
+                }
+            }
         )
-        print(data)
     except BaseException as e:
         print(e)
         raise(e)
