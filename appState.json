@@ -1,63 +1,72 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "a46b92b7-09b6-4c09-b60e-9411ac91c908": {
-        "id": "a46b92b7-09b6-4c09-b60e-9411ac91c908",
+      "e5f0dddf-f581-4838-b98e-6f87aecf6e66": {
+        "id": "e5f0dddf-f581-4838-b98e-6f87aecf6e66",
         "parent": null,
-        "name": "test.js",
-        "type": "JS_LAMBDA",
+        "name": "test.py",
+        "type": "PYTHON_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test.js",
+        "filePath": "test.py",
         "cursor": {
           "lineNumber": 2,
           "column": 5
         },
         "config": {
-          "runtime": "nodejs8",
+          "runtime": "python3.8",
+          "handler": "handler",
           "timeout": 60,
           "memory": 128,
-          "triggerType": 0,
-          "name": "funcname"
+          "layers": [],
+          "name": "test"
         },
         "triggers": [
           {
-            "resourceName": "http-trigger",
+            "resourceName": "apigusEast1TestAPItestdbputany",
             "config": {}
           }
         ]
-      },
-      "5b8a4cc6-3b22-4350-8fdf-cbc7e5dfef7f": {
-        "id": "5b8a4cc6-3b22-4350-8fdf-cbc7e5dfef7f",
-        "parent": null,
-        "name": "index.js",
-        "type": "JS_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "index.js"
-      },
-      "9bab83a7-a5ad-49fb-bbea-b21add0afd53": {
-        "id": "9bab83a7-a5ad-49fb-bbea-b21add0afd53",
-        "parent": null,
-        "name": "main.py",
-        "type": "PYTHON_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "main.py"
       }
     },
     "openFiles": [
-      "a46b92b7-09b6-4c09-b60e-9411ac91c908"
+      "e5f0dddf-f581-4838-b98e-6f87aecf6e66"
     ],
-    "currentFileId": "a46b92b7-09b6-4c09-b60e-9411ac91c908",
+    "currentFileId": "e5f0dddf-f581-4838-b98e-6f87aecf6e66",
     "resources": {
-      "http-trigger": {
-        "name": "http-trigger",
-        "type": "http-trigger",
-        "config": {}
+      "apigusEast1TestAPItestdbputany": {
+        "name": "apigusEast1TestAPItestdbputany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "TestAPI",
+          "apiId": "0itznun7w3",
+          "endpointType": "EDGE",
+          "rootResourceId": "h2lelj6j7k",
+          "existingResources": {
+            "/MyLambda": "98nqbj",
+            "/testdbput": "bu1jy0",
+            "/": "h2lelj6j7k",
+            "/newchange/test": "k6pdhn",
+            "/newchange": "q1ox7l",
+            "/testWithSlash": "q4m4g1",
+            "/testtwospeciallambda": "q4szm3",
+            "/testtwospecialkumutest": "wey3lk"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/testdbput",
+          "resourceName": "testdbput",
+          "resourceId": "bu1jy0",
+          "restMethod": "ANY",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "Test",
+          "stageDeploymentId": "vi4r8n",
+          "mode": 1
+        }
       }
     },
     "customTemplate": {
@@ -65,7 +74,16 @@
       "dialect": null,
       "definitions": null
     },
-    "envVariables": [],
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
     "packageJSON": {
       "dependencies": {}
     }
@@ -74,11 +92,11 @@
     "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east1",
-    "platform": "GCP",
-    "language": "nodejs",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "language": "python",
     "platformRegions": {},
-    "lastSave": 1586168941648
+    "lastSave": 1586946726574
   },
   "VCS_STATE": {
     "provider": "GitHub",
