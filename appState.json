@@ -1,75 +1,37 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "e5f0dddf-f581-4838-b98e-6f87aecf6e66": {
-        "id": "e5f0dddf-f581-4838-b98e-6f87aecf6e66",
+      "053c7996-03db-4dbe-b506-1f7dac4d3a34": {
+        "id": "053c7996-03db-4dbe-b506-1f7dac4d3a34",
         "parent": null,
-        "name": "test.py",
-        "type": "PYTHON_LAMBDA",
+        "name": "es.js",
+        "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "test.py",
+        "filePath": "es.js",
         "cursor": {
-          "lineNumber": 2,
-          "column": 5
+          "lineNumber": 4,
+          "column": 3
         },
         "config": {
-          "runtime": "python3.8",
+          "runtime": "nodejs10.x",
           "handler": "handler",
           "timeout": 60,
           "memory": 128,
           "layers": [],
-          "name": "test"
+          "name": "es"
         },
-        "triggers": [
-          {
-            "resourceName": "apigusEast1TestAPItestdbputany",
-            "config": {}
-          }
-        ]
+        "triggers": []
       }
     },
     "openFiles": [
-      "e5f0dddf-f581-4838-b98e-6f87aecf6e66"
+      "053c7996-03db-4dbe-b506-1f7dac4d3a34"
     ],
-    "currentFileId": "e5f0dddf-f581-4838-b98e-6f87aecf6e66",
-    "resources": {
-      "apigusEast1TestAPItestdbputany": {
-        "name": "apigusEast1TestAPItestdbputany",
-        "type": "API_GATEWAY",
-        "config": {
-          "selectedRegion": "us-east-1",
-          "apiMode": 1,
-          "apiName": "TestAPI",
-          "apiId": "0itznun7w3",
-          "endpointType": "EDGE",
-          "rootResourceId": "h2lelj6j7k",
-          "existingResources": {
-            "/MyLambda": "98nqbj",
-            "/testdbput": "bu1jy0",
-            "/": "h2lelj6j7k",
-            "/newchange/test": "k6pdhn",
-            "/newchange": "q1ox7l",
-            "/testWithSlash": "q4m4g1",
-            "/testtwospeciallambda": "q4szm3",
-            "/testtwospecialkumutest": "wey3lk"
-          },
-          "resourceMode": 1,
-          "resourcePath": "/testdbput",
-          "resourceName": "testdbput",
-          "resourceId": "bu1jy0",
-          "restMethod": "ANY",
-          "proxyIntegration": false,
-          "enableCORS": false,
-          "stageMode": 1,
-          "stageName": "Test",
-          "stageDeploymentId": "vi4r8n",
-          "mode": 1
-        }
-      }
-    },
+    "currentFileId": "053c7996-03db-4dbe-b506-1f7dac4d3a34",
+    "resources": {},
     "customTemplate": {
+      "syntax": "JSON",
       "overrideDefault": false,
       "dialect": null,
       "definitions": null
@@ -89,14 +51,15 @@
     }
   },
   "PROJECT_META": {
-    "projectName": "test",
+    "sigmaVersion": "1.4.1.1",
+    "projectName": "es",
     "projectDescription": "",
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "language": "python",
+    "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1586946726574
+    "lastSave": 1594876750700
   },
   "VCS_STATE": {
     "provider": "GitHub",
