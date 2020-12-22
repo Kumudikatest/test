@@ -1,15 +1,15 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "053c7996-03db-4dbe-b506-1f7dac4d3a34": {
-        "id": "053c7996-03db-4dbe-b506-1f7dac4d3a34",
+      "32c92ddc-7b78-4274-a891-02e5bb571da8": {
+        "id": "32c92ddc-7b78-4274-a891-02e5bb571da8",
         "parent": null,
-        "name": "es.js",
+        "name": "test.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "es.js",
+        "filePath": "test.js",
         "cursor": {
           "lineNumber": 4,
           "column": 3
@@ -20,15 +20,25 @@
           "timeout": 60,
           "memory": 128,
           "layers": [],
-          "name": "es"
+          "name": "test"
         },
-        "triggers": []
+        "triggers": [],
+        "lastUpdated": 1608646771223,
+        "testCases": {
+          "1156a3cb-435d-420f-b68b-a9655fe2695c": {
+            "id": "1156a3cb-435d-420f-b68b-a9655fe2695c",
+            "name": "Test event",
+            "functionId": "32c92ddc-7b78-4274-a891-02e5bb571da8",
+            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "eventTemplate": "hello-world"
+          }
+        }
       }
     },
     "openFiles": [
-      "053c7996-03db-4dbe-b506-1f7dac4d3a34"
+      "32c92ddc-7b78-4274-a891-02e5bb571da8"
     ],
-    "currentFileId": "053c7996-03db-4dbe-b506-1f7dac4d3a34",
+    "currentFileId": "32c92ddc-7b78-4274-a891-02e5bb571da8",
     "resources": {},
     "customTemplate": {
       "syntax": "JSON",
@@ -51,15 +61,15 @@
     }
   },
   "PROJECT_META": {
-    "sigmaVersion": "1.4.1.1",
-    "projectName": "es",
+    "sigmaVersion": "1.4.4.1",
+    "projectName": "test",
     "projectDescription": "",
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1594876750700
+    "lastSave": 1608646808201
   },
   "VCS_STATE": {
     "provider": "GitHub",

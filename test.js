@@ -1,4 +1,4 @@
-exports.handler = function(request, response) {
+exports.handler = async (event) => {
     
-    response.send({"message": "Successfully executed"});
-}
+    return {"message": "Successfully executed"};
+};
