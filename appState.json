@@ -1,8 +1,8 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "bf8d9e6f-c7d8-4c2c-b391-0aa665ff79d0": {
-        "id": "bf8d9e6f-c7d8-4c2c-b391-0aa665ff79d0",
+      "903dae05-0938-46fb-83af-8619b935fbd1": {
+        "id": "903dae05-0938-46fb-83af-8619b935fbd1",
         "parent": null,
         "name": "test.js",
         "type": "JS_LAMBDA",
@@ -15,82 +15,52 @@
           "column": 5
         },
         "config": {
-          "runtime": "nodejs8",
+          "runtime": "nodejs10.x",
           "handler": "handler",
           "timeout": 60,
           "memory": 128,
-          "triggerType": 0,
+          "layers": [],
           "name": "test"
         },
-        "triggers": [
-          {
-            "resourceName": "http-trigger",
-            "config": {}
-          }
-        ],
-        "lastUpdated": 1610704184885,
-        "testCases": {
-          "c8faf222-617f-4c0d-8f73-ad35234157f8": {
-            "id": "c8faf222-617f-4c0d-8f73-ad35234157f8",
-            "functionId": "bf8d9e6f-c7d8-4c2c-b391-0aa665ff79d0",
-            "name": "My First Test Case",
-            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
-          }
-        }
-      },
-      "6ba459f4-a246-4ebf-ac6e-17f47b18457b": {
-        "id": "6ba459f4-a246-4ebf-ac6e-17f47b18457b",
-        "parent": null,
-        "name": "index.js",
-        "type": "JS_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "index.js"
-      },
-      "f7d839aa-d1d0-4958-91c3-ff1a6d41ddf7": {
-        "id": "f7d839aa-d1d0-4958-91c3-ff1a6d41ddf7",
-        "parent": null,
-        "name": "main.py",
-        "type": "PYTHON_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "main.py"
+        "triggers": [],
+        "lastUpdated": 1614592814210
       }
     },
     "openFiles": [
-      "bf8d9e6f-c7d8-4c2c-b391-0aa665ff79d0"
+      "903dae05-0938-46fb-83af-8619b935fbd1"
     ],
-    "currentFileId": "bf8d9e6f-c7d8-4c2c-b391-0aa665ff79d0",
-    "resources": {
-      "http-trigger": {
-        "name": "http-trigger",
-        "type": "http-trigger",
-        "config": {}
-      }
-    },
+    "currentFileId": "903dae05-0938-46fb-83af-8619b935fbd1",
+    "resources": {},
     "customTemplate": {
       "syntax": "JSON",
       "overrideDefault": false,
       "dialect": null,
       "definitions": null
     },
-    "envVariables": [],
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
     "packageJSON": {
       "dependencies": {}
     }
   },
   "PROJECT_META": {
-    "sigmaVersion": "1.5.1",
+    "sigmaVersion": "1.7.0",
     "projectName": "test",
-    "projectDescription": "My First Project",
+    "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east1",
-    "platform": "GCP",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1610704191424
+    "lastSave": 1614592836951
   },
   "VCS_STATE": {
     "provider": "GitHub",
